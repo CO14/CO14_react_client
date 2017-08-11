@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import './main.css';
 
@@ -12,13 +12,13 @@ import registerServiceWorker from './registerServiceWorker';
 
 const AppRoutes = (
   <Provider store={Store}>
-    <Router>
+    <BrowserRouter>
       <div>
         <Switch>
           <Route path="/" component={App}/>
         </Switch>
       </div>
-    </Router>
+    </BrowserRouter>
   </Provider>
 );
 
