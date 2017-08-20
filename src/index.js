@@ -10,7 +10,7 @@ import App from './components/App';
 
 import registerServiceWorker from './registerServiceWorker';
 
-const AppRoutes = (
+const CO14 = (
   <Provider store={Store}>
     <BrowserRouter>
       <div>
@@ -22,6 +22,6 @@ const AppRoutes = (
   </Provider>
 );
 
-render(AppRoutes, document.getElementById('root'));
+render(CO14, document.getElementById('root'));
 
 registerServiceWorker();
