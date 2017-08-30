@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta+Mahee|Source+Code+Pro');
+
 * {
   box-sizing: border-box;
 }
@@ -5,6 +7,8 @@
 body {
   margin: 0 auto;
   padding: 0;
+  font-family: 'Mukta Mahee', sans-serif;
+  /*font-family: 'Source Code Pro', monospace;*/
 }
 
 /* ---- LAYOUT ---- */
@@ -20,9 +24,56 @@ body {
 
 .footer {
   flex-shrink: 0;
+  text-align: center;
 }
 
 .container {
-  margin: 1em auto;
-  max-width: 85vw;
+  min-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- FORM ELEMENTS ---- */
+
+.input {
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  border: 0.15em solid #5F4BB6;
+  border-radius: 100px;
+  padding: 1em 0.5em;
+  margin: 0.5em 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.input:focus {
+  border: 0.15em solid blue;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid #5F4BB6;
+  border-radius: 100px;
+  padding: 1em 0.5em;
+  margin: 0.5em 0 0 0;
+  text-transform: uppercase;
+  min-width: 10em;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .input {
+    margin: 0.5em 0.5em;
+  }
+
+  .button {
+    margin: 0.5em 0.5em;
+  }
+  
+  .container {
+    min-width: 80%;
+  }
 }
