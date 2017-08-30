@@ -1,0 +1,12 @@
+.form-style {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .form-style {
+    flex-direction: row;
+  }
+}
