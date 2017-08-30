@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
 import './global.css';
 
@@ -13,11 +13,7 @@ import registerServiceWorker from './registerServiceWorker';
 const CO14 = (
   <Provider store={Store}>
     <BrowserRouter>
-      <div>
-        <Switch>
-          <Route path="/" component={App}/>
-        </Switch>
-      </div>
+      <App />
     </BrowserRouter>
   </Provider>
 );
