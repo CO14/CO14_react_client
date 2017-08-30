@@ -1,0 +1,17 @@
+.services-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.service-header {
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 992px) {
+  .services-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1.25em;
+  }
+}

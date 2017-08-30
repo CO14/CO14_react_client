@@ -28,43 +28,41 @@ body {
 }
 
 .container {
-  min-width: 100%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* ---- FORM ELEMENTS ---- */
-
 .input {
   display: inline-block;
   text-align: center;
   background: transparent;
-  border: 0.15em solid #5F4BB6;
+  border: 0.1em solid #5F4BB6;
   border-radius: 100px;
   padding: 1em 0.5em;
   margin: 0.5em 0;
   text-transform: uppercase;
   width: 100%;
-}
-
-.input:focus {
-  border: 0.15em solid blue;
+  height: 3.5em;
+  max-height: 3.5em;
 }
 
 .button {
   display: inline-block;
   text-decoration: none;
   background: transparent;
-  border: 2px solid #5F4BB6;
+  border: 0.1em solid #5F4BB6;
   border-radius: 100px;
   padding: 1em 0.5em;
   margin: 0.5em 0 0 0;
   text-transform: uppercase;
   min-width: 10em;
+  height: 3.5em;
+  max-height: 3.5em;
 }
 
-
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 992px) {
   .input {
     margin: 0.5em 0.5em;
   }
@@ -72,8 +70,8 @@ body {
   .button {
     margin: 0.5em 0.5em;
   }
-  
+
   .container {
-    min-width: 80%;
+    width: 80%;
   }
 }

@@ -1,0 +1,12 @@
+.banner-image {
+  margin: 2em 0;
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  .banner-image {
+    margin: 5em 0;
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  }
+}
