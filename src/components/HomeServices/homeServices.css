@@ -8,6 +8,10 @@
   text-transform: uppercase;
 }
 
+.icon-size {
+  max-width: 100px;
+}
+
 @media only screen and (min-width: 992px) {
   .services-wrapper {
     display: grid;

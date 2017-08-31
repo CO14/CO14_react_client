@@ -3,6 +3,7 @@ import React from 'react';
 import Splash from '../Splash';
 import HomeServices from '../HomeServices';
 import HomeBanner from '../HomeBanner';
+import HomeDetails from '../HomeDetails';
 
 import './home.css';
 
@@ -12,6 +13,7 @@ const Home = props => {
       <Splash />
       <HomeServices />
       <HomeBanner />
+      <HomeDetails />
     </section>
   );
 }
