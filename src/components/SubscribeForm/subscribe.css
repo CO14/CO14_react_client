@@ -1,0 +1,38 @@
+.subscribe-form-item   {
+  padding: 1em;
+  background: #3F4045;
+  color: #fff;
+  border-style: none;
+  border-left: 1px solid #343539;
+  border-right: 1px solid #343539;
+  border-bottom: 1px solid #343539;
+  min-height: 48px;
+  text-transform: uppercase;
+}
+
+.subscribe-form-item:first-child {
+  border-top: 1px solid #343539;
+}
+
+.subscribe-form-item:focus {
+
+}
+
+.subscribe-form {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  list-style: none;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe-button {
+  text-align: left;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  background: linear-gradient(90deg, #5F5AA2, #343539)
+}
