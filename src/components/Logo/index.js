@@ -5,7 +5,7 @@ import CO14_LOGO from '../../images/CO14_logo.png';
 
 import './logo.css';
 
-const Logo = props => {
+const Logo = () => {
   return(
     <div>
       <Link to="/">
