@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {SIGNUP_REQUEST, LOGIN_REQUEST, SET_CURRENT_USER} from './action_types';
+import {SIGNUP_REQUEST, LOGIN_REQUEST} from './action_types';
 
 import setAuthorizationToken from '../utilities/setAuthorizationToken';
 
@@ -21,13 +21,6 @@ export const userLoginRequest = (credentials) => {
     });
   }
 };
-
-export const setCurrentUser = (user) => {
-  return {
-    type: SET_CURRENT_USER,
-    user
-  }
-}
 
 const setLocalStorage = (res) => {
   const token = res.data.token;

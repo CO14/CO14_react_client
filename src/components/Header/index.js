@@ -4,11 +4,9 @@ import Logo from '../Logo';
 import Navigation from '../Navigation';
 import LoginForm from '../LoginForm';
 
-import './header.css';
+import isLoggedIn from '../../utilities/isLoggedIn';
 
-// If loggedin Show Header Splash Page else Show Header Profile Page
-// Header Splash has:
-// Logo, Navigation, Login
+import './header.css';
 
 const HeaderHome = props => {
   return (
@@ -26,7 +24,9 @@ const HeaderProfile = props => {
   return (
     <div className="header-layout">
       <Logo />
-      <Navigation/>
+      <div className="login-nav">
+        <Navigation/>
+      </div>
     </div>
   );
 };
@@ -34,9 +34,7 @@ const HeaderProfile = props => {
 const Header = props => {
   return(
     <header className="container">
-      <HeaderHome />
-      {/* <HeaderProfile/> */}
-      {/* {(loggedIn) ? <HeaderProfile/> : <HeaderHome />} */}
+      {isLoggedIn ? <HeaderHome /> : <HeaderProfile/>}
     </header>
   );
 }

@@ -1,3 +1,3 @@
-export default function isLoggedIn(token) {
-  (!token === undefined) ? true : false;
+export default function isLoggedIn() {
+  (!localStorage.UserID) ? true : false;
 }

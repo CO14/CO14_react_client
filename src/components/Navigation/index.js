@@ -49,7 +49,7 @@ const NavigationProfile = props => {
 const Navigation = props => {
   return(
     <nav>
-      {(isLoggedIn(localStorage.Token)) ? <NavigationProfile /> : <NavigationHome />}
+      {isLoggedIn ? <NavigationHome /> : <NavigationProfile />}
     </nav>
   );
 }
