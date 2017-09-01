@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
-// import PropTypes from 'prop-types';
 
 import {userLoginRequest} from '../../actions/actions_auth';
 
@@ -61,12 +60,8 @@ class LoginForm extends Component {
   }
 }
 
-// LoginForm.propTypes = {
-//   userLoginRequest: PropTypes.func
-// }
-
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({userLoginRequest} ,dispatch);
+  return bindActionCreators({userLoginRequest}, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(LoginForm);

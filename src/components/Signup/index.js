@@ -1,9 +1,14 @@
 import React from 'react';
 
+import SignupForm from '../SignupForm';
+
+import './signup.css';
+
 const Signup = props => {
   return(
-    <section>
-      SIGNUP
+    <section className="container">
+      <h1>Create A New Account</h1>
+      <SignupForm />
     </section>
   );
 }

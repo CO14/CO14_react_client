@@ -5,7 +5,7 @@ const AUTH_URL = window.location.hostname === "localhost" ? "http://localhost:50
 export const SIGNUP_REQUEST = 'SIGNUP_REQUEST';
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 
-export const userSignUpRequest = (userData) => {
+export const userSignupRequest = (userData) => {
   axios.post(`${AUTH_URL}/signup`, userData)
   return {
     type: SIGNUP_REQUEST
