@@ -3,6 +3,8 @@ import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 
+import setAuthorizationToken from './utilities/setAuthorizationToken';
+
 import './global.css';
 
 import Store from './store';
@@ -17,6 +19,8 @@ const CO14 = (
     </BrowserRouter>
   </Provider>
 );
+
+setAuthorizationToken(localStorage.Token);
 
 render(CO14, document.getElementById('root'));
 

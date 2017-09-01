@@ -2,6 +2,8 @@ import React from 'react';
 
 import {Link} from 'react-router-dom';
 
+import isLoggedIn from '../../utilities/isLoggedIn';
+
 import './navigation.css';
 
 // If loggedin Show Navigation Home Page else Show Navigation Profile Page
@@ -47,8 +49,7 @@ const NavigationProfile = props => {
 const Navigation = props => {
   return(
     <nav>
-      <NavigationHome />
-      {/* {(loggedIn) ? <NavigationProfile /> : <NavigationHome />} */}
+      {(isLoggedIn(localStorage.Token)) ? <NavigationProfile /> : <NavigationHome />}
     </nav>
   );
 }

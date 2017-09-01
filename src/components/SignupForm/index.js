@@ -35,14 +35,16 @@ class SignupForm extends Component {
 
   submitSignup(event) {
     event.preventDefault();
-    this.props.userSignupRequest(this.state.account);
-    this.setState({redirectToProfile: true});
+    this.props.userSignupRequest(this.state.account)
+    .then(res => {
+      this.setState({redirectToProfile: true});
+    });
   }
 
   render() {
     if (this.state.redirectToProfile) {
       return (
-        <Redirect push to="/profile/:id" />
+        <Redirect push to={`/profile/${localStorage.UserID}`} />
       );
     }
 

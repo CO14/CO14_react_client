@@ -34,14 +34,16 @@ class LoginForm extends Component {
 
   submitLogin(event) {
     event.preventDefault();
-    this.props.userLoginRequest(this.state.account);
-    this.setState({redirectToProfile: true})
+    this.props.userLoginRequest(this.state.account)
+    .then( res => {
+      this.setState({redirectToProfile: true})
+    })
   }
 
   render() {
     if (this.state.redirectToProfile) {
       return (
-        <Redirect push to="/profile/:id" />
+        <Redirect push to={`/profile/${localStorage.UserID}`} />
       );
     }
     return (

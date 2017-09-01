@@ -20,7 +20,6 @@ const Main = props => {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/signup" component={Signup} />
-        <Route path="/profile" component={Profile} />
         <Route path="/profile/:id" component={Profile} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
       </Switch>
