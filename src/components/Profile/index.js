@@ -1,11 +1,34 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
-const Profile = props => {
-  return(
-    <div>
-      
-    </div>
-  );
+import {getAccountProfile} from '../../actions/actions_account';
+
+class Profile extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+  componentDidMount() {
+    this.props.getAccountProfile(localStorage.UserID)
+  }
+
+  render() {
+    return (
+      <div>
+
+      </div>
+    );
+  }
 }
 
-export default Profile;
+
+function mapStateToProps() {
+ return {}
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({getAccountProfile}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {SIGNUP_REQUEST, LOGIN_REQUEST} from './action_types';
+// import {SIGNUP_REQUEST, LOGIN_REQUEST} from './action_types';
 
 import setAuthorizationToken from '../utilities/setAuthorizationToken';
 

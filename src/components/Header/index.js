@@ -34,7 +34,7 @@ const HeaderProfile = props => {
 const Header = props => {
   return(
     <header className="container">
-      {isLoggedIn ? <HeaderHome /> : <HeaderProfile/>}
+      {isLoggedIn() ? <HeaderProfile/> : <HeaderHome />}
     </header>
   );
 }

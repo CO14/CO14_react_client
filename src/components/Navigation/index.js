@@ -47,9 +47,10 @@ const NavigationProfile = props => {
 };
 
 const Navigation = props => {
+  console.log(isLoggedIn());
   return(
     <nav>
-      {isLoggedIn ? <NavigationHome /> : <NavigationProfile />}
+      {isLoggedIn() ? <NavigationProfile /> : <NavigationHome /> }
     </nav>
   );
 }
