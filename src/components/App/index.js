@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 import './app.css';
 
@@ -28,4 +29,4 @@ function mapStateToProps(state) {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

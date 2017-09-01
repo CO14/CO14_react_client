@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux';
+
+import {loginAction} from '../../actions/';
 
 import './loginForm.css';
 
@@ -55,4 +59,10 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(loginAction ,dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(LoginForm);
