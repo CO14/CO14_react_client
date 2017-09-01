@@ -1,9 +1,3 @@
-// export default function(state, action) {
-//   switch (action.type) {
-//     case :
-//
-//       break;
-//     default:
-//
-//   }
-// };
+export default function(state = [], action) {
+  return state;
+};

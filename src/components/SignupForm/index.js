@@ -36,7 +36,7 @@ class SignupForm extends Component {
   submitSignup(event) {
     event.preventDefault();
     this.props.userSignupRequest(this.state.account);
-    this.setState({redirectToProfile: true, account: {first_name: '', last_name: '', email: '', password: ''}});
+    this.setState({redirectToProfile: true});
   }
 
   render() {
@@ -45,6 +45,7 @@ class SignupForm extends Component {
         <Redirect push to="/profile/:id" />
       );
     }
+
     return (
       <form className="" onSubmit={this.submitSignup}>
         <TextField
@@ -71,7 +72,6 @@ class SignupForm extends Component {
           value={this.state.account.email}
           onChange={this.onInputChange}
         />
-
         <TextField
           className="input"
           type="password"

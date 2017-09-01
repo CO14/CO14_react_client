@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
+import profile from './reducer_account';
+
 const Reducers = combineReducers({
-  state: (state = {}) => state
+  profile
 });
 
 export default Reducers;
