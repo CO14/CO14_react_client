@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
 import {userLoginRequest} from '../../actions/actions_auth';
 
@@ -13,6 +14,7 @@ class LoginForm extends Component {
     super(props);
 
     this.state = {
+      redirectToProfile: false,
       account: {
         email: '',
         password: ''
@@ -33,9 +35,15 @@ class LoginForm extends Component {
   submitLogin(event) {
     event.preventDefault();
     this.props.userLoginRequest(this.state.account);
+    this.setState({redirectToProfile: true})
   }
 
   render() {
+    if (this.state.redirectToProfile) {
+      return (
+        <Redirect push to="/profile/:id" />
+      );
+    }
     return (
       <form className="form-style" onSubmit={this.submitLogin}>
         <TextField

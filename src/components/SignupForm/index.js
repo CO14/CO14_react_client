@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
+import {Redirect} from 'react-router-dom';
+
 import {userSignupRequest} from '../../actions/actions_auth';
 
 import TextField from '../TextField';
@@ -11,6 +13,7 @@ class SignupForm extends Component {
     super(props);
 
     this.state = {
+      redirectToProfile: false,
       account: {
         first_name: '',
         last_name: '',
@@ -33,17 +36,15 @@ class SignupForm extends Component {
   submitSignup(event) {
     event.preventDefault();
     this.props.userSignupRequest(this.state.account);
-    this.setState({
-      account: {
-        first_name: '',
-        last_name: '',
-        email: '',
-        password: ''
-      }
-    });
+    this.setState({redirectToProfile: true, account: {first_name: '', last_name: '', email: '', password: ''}});
   }
 
   render() {
+    if (this.state.redirectToProfile) {
+      return (
+        <Redirect push to="/profile/:id" />
+      );
+    }
     return (
       <form className="" onSubmit={this.submitSignup}>
         <TextField
