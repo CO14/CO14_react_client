@@ -1,4 +1,11 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux';
+// import PropTypes from 'prop-types';
+
+import {userLoginRequest} from '../../actions/actions_auth';
+
+import TextField from '../TextField';
 
 import './loginForm.css';
 
@@ -17,7 +24,6 @@ class LoginForm extends Component {
   }
 
   onInputChange(event) {
-    console.log(event.target.value);
     const name = event.target.name;
     const value = event.target.value;
     const account = this.state.account;
@@ -27,13 +33,13 @@ class LoginForm extends Component {
 
   submitLogin(event) {
     event.preventDefault();
-
+    this.props.userLoginRequest(this.state.account);
   }
 
   render() {
     return (
       <form className="form-style" onSubmit={this.submitLogin}>
-        <input
+        <TextField
           className="input"
           type="text"
           name="email"
@@ -41,7 +47,7 @@ class LoginForm extends Component {
           value={this.state.account.email}
           onChange={this.onInputChange}
         />
-        <input
+        <TextField
           className="input"
           type="password"
           name="password"
@@ -55,4 +61,12 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+// LoginForm.propTypes = {
+//   userLoginRequest: PropTypes.func
+// }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({userLoginRequest} ,dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(LoginForm);
