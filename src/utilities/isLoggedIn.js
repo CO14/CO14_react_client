@@ -1,3 +1,3 @@
 export default function isLoggedIn() {
-  (!localStorage.UserID) ? true : false;
+  return (localStorage.UserID) ? true : false;
 }

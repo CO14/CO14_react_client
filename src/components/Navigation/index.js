@@ -40,16 +40,17 @@ const NavigationProfile = props => {
         <Link to="/contact" className="nav-links">Contact</Link>
       </li>
       <li className="nav-list-item">
-        <Link to="/" className="nav-links">Logout</Link>
+        <Link to="/" className="nav-links" onClick={() => localStorage.clear()}>Logout</Link>
       </li>
     </ul>
   );
 };
 
 const Navigation = props => {
+  console.log(isLoggedIn());
   return(
     <nav>
-      {isLoggedIn ? <NavigationHome /> : <NavigationProfile />}
+      {isLoggedIn() ? <NavigationProfile /> : <NavigationHome /> }
     </nav>
   );
 }
