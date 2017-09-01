@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
+import account from './reducer_account';
+
 const Reducers = combineReducers({
-  state: (state = {}) => state
+  account
 });
 
 export default Reducers;

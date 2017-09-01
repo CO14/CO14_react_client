@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 
 import Home from '../Home';
 import Peaks from '../Peaks';
@@ -15,12 +15,11 @@ const Main = props => {
   return(
     <main className="body_content">
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" render={() => (false ? <Redirect to="/profile/" /> : <Home />)}/>
         <Route path="/peaks" component={Peaks} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/signup" component={Signup} />
-        <Route path="/profile" component={Profile} />
         <Route path="/profile/:id" component={Profile} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
       </Switch>

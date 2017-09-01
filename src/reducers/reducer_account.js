@@ -1,9 +1,5 @@
-// export default function(state, action) {
-//   switch (action.type) {
-//     case :
-//
-//       break;
-//     default:
-//
-//   }
-// };
+const initialState = {}
+
+export default (state = initialState, action = {}) => {
+      return state;
+};
