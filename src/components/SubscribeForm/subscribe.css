@@ -31,6 +31,7 @@
 }
 
 .subscribe-button {
+  cursor: pointer;
   text-align: left;
   font-size: 0.7em;
   letter-spacing: 0.1em;
