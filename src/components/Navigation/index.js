@@ -8,7 +8,7 @@ import './navigation.css';
 
 // If loggedin Show Navigation Home Page else Show Navigation Profile Page
 
-const NavigationHome = props => {
+const NavigationHome = () => {
   return (
     <ul className="nav-list">
       <li className="nav-list-item">
@@ -27,9 +27,12 @@ const NavigationHome = props => {
   );
 };
 
-const NavigationProfile = props => {
+const NavigationProfile = () => {
   return (
     <ul className="nav-list">
+      <li className="nav-list-item">
+        <Link to="/" className="nav-links">Home</Link>
+      </li>
       <li className="nav-list-item">
         <Link to="/peaks" className="nav-links">Peaks</Link>
       </li>
@@ -47,7 +50,7 @@ const NavigationProfile = props => {
 };
 
 const Navigation = props => {
-  console.log(isLoggedIn());
+
   return(
     <nav>
       {isLoggedIn() ? <NavigationProfile /> : <NavigationHome /> }

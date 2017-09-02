@@ -4,30 +4,35 @@ import {connect} from 'react-redux';
 
 import {getAccountProfile} from '../../actions/actions_account';
 
-class Profile extends Component {
-  constructor(props) {
-    super(props);
+import ProfileGoals from '../ProfileGoals';
 
-  }
+class Profile extends Component {
   componentDidMount() {
     this.props.getAccountProfile(localStorage.UserID)
   }
 
   render() {
-    return (
-      <div>
+    if (!this.props.account) {
+      console.log(this.props.account);
+      return "LOADING"
+    } else {
+      console.log(this.props.account);
+      return (
+        <div>
+          <ProfileGoals account={this.props.account}/>
+        </div>
+      );
+    }
 
-      </div>
-    );
   }
 }
 
 
-function mapStateToProps() {
- return {}
+const mapStateToProps = (state) => {
+  return {account: state.account};
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({getAccountProfile}, dispatch);
 }
 
