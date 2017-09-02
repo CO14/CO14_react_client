@@ -44,7 +44,7 @@ class SignupForm extends Component {
   render() {
     if (this.state.redirectToProfile) {
       return (
-        <Redirect push to={`/profile/${localStorage.UserID}`} />
+        <Redirect push to={`/profile/`} />
       );
     }
 
