@@ -14,20 +14,21 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.props.account);
     return (
       <div>
-
+        
       </div>
     );
   }
 }
 
 
-function mapStateToProps() {
- return {}
+const mapStateToProps = (state) => {
+  return {account: state.account};
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({getAccountProfile}, dispatch);
 }
 

@@ -8,7 +8,7 @@ import isLoggedIn from '../../utilities/isLoggedIn';
 
 import './header.css';
 
-const HeaderHome = props => {
+const HeaderHome = () => {
   return (
     <div className="header-layout">
       <Logo />
@@ -20,7 +20,7 @@ const HeaderHome = props => {
   );
 };
 
-const HeaderProfile = props => {
+const HeaderProfile = () => {
   return (
     <div className="header-layout">
       <Logo />
@@ -31,7 +31,7 @@ const HeaderProfile = props => {
   );
 };
 
-const Header = props => {
+const Header = () => {
   return(
     <header className="container">
       {isLoggedIn() ? <HeaderProfile/> : <HeaderHome />}
