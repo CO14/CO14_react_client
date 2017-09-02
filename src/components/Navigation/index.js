@@ -31,6 +31,9 @@ const NavigationProfile = () => {
   return (
     <ul className="nav-list">
       <li className="nav-list-item">
+        <Link to="/" className="nav-links">Home</Link>
+      </li>
+      <li className="nav-list-item">
         <Link to="/peaks" className="nav-links">Peaks</Link>
       </li>
       <li className="nav-list-item">
