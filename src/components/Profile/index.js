@@ -2,38 +2,39 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import {getAccountProfile} from '../../actions/actions_account';
+import {getUserProfile} from '../../actions/actions_account';
 
 import ProfileGoals from '../ProfileGoals';
 
 class Profile extends Component {
   componentDidMount() {
-    this.props.getAccountProfile(localStorage.UserID)
+    this.props.getUserProfile(localStorage.UserID)
   }
 
   render() {
-    if (!this.props.account) {
-      console.log(this.props.account);
-      return "LOADING"
+    console.log();
+    if (!this.props.data.isReceived) {
+      return (
+        <div>"LOADING..."</div>
+      );
     } else {
-      console.log(this.props.account);
       return (
         <div>
-          <ProfileGoals account={this.props.account}/>
+          <ProfileGoals data={this.props.data}/>
         </div>
       );
     }
-
   }
 }
 
+  const mapStateToProps = (state) => {
+    return {data: state.account};
+  }
 
-const mapStateToProps = (state) => {
-  return {account: state.account};
-}
+  const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+      getUserProfile
+    }, dispatch);
+  }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({getAccountProfile}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+  export default connect(mapStateToProps, mapDispatchToProps)(Profile);
