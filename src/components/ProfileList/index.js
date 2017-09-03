@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -6,42 +6,30 @@ import ProfileListItem from '../ProfileListItem';
 
 import './profileList.css';
 
-class ProfileList extends Component {
-  render() {
-    const peak = this.props.data.profile.peak;
+const ProfileList = props => {
+  const peak = props.profile.peak;
 
-    const peaks = peak.map((peak, index) => {
-      return peak.is_complete === this.props.complete && <ProfileListItem peak={peak} key={index} />
-    });
+  const peaks = peak.map((peak, index) => {
+    return peak.is_complete === props.complete && <ProfileListItem peak={peak} key={index} />
+  });
 
-    return (
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>
-              <small>Peak</small>
-            </th>
-            <th>
-              <small>Range</small>
-            </th>
-            <th>
-              <small>Elevation</small>
-            </th>
-            <th>
-              <small>Difficulty</small>
-            </th>
-            <th>
-              <small>Edit</small>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {peaks}
-        </tbody>
-      </table>
-    );
-  }
+  return(
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><small>Peak</small></th>
+          <th><small>Range</small></th>
+          <th><small>Elevation</small></th>
+          <th><small>Difficulty</small></th>
+          <th><small>Edit</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        {peaks}
+      </tbody>
+    </table>
+  );
 }
 
 export default ProfileList;

@@ -1,8 +1,9 @@
 import React from 'react';
 
-const ProfileListItem = props => {
 
-  return (
+
+const ProfileListItem = props => {
+  return(
     <tr>
       <td><img className="goal-thumbnail" src={props.peak.peak_image_url} alt={props.peak.peak_name}/></td>
       <td className="align-center">
@@ -19,7 +20,7 @@ const ProfileListItem = props => {
       </td>
       <td className="align-center">
         <small>
-          <a className="edit-button" onClick={() => console.log("stuff")}>
+          <a className="edit-button">
             <i className="fa fa-pencil fa-lg"></i>
           </a>
         </small>

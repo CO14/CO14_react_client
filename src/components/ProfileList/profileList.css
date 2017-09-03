@@ -2,7 +2,7 @@
   object-fit: cover;
   height: 50px;
   width: 100%;
-  border-radius: 5px
+  border-radius: 5px;
 }
 
 td, th {
@@ -20,14 +20,16 @@ table {
 
 .edit-button {
   cursor: pointer;
-  background: #5F5AA2;
-  color: #fff;
+  border: 1px solid #5F5AA2;
+  color: #5F5AA2;
   padding: 1em;
-  border-radius: 5px
+  width: 100%;
 }
 
 .edit-button:hover {
-  background: linear-gradient(45deg, #5F5AA2, #fbf5f3);
+  background: #5F5AA2;
+  opacity: 0.4;
+  color: #fbf5f3;
 }
 
 @media only screen and (min-width: 768px) {

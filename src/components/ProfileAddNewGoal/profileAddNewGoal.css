@@ -1,0 +1,44 @@
+.add-button {
+  cursor: pointer;
+  border-style: none;
+  background: none;
+  border: 1px solid #5F5AA2;
+  border-left: none;
+  border-radius: 100px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 1.5em 0;
+  width: 5em;
+  color: #5F5AA2;
+  font-weight: bold;
+}
+
+select {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border-style: none;
+  border: 1px solid #5F5AA2;
+  border-radius: 100px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  color: #5F5AA2;
+  font-weight: bold;
+  padding: 1.5em 0;
+  padding-left: 1.5em;
+  width: 20em;
+  text-transform: uppercase;
+}
+
+.add-new-form {
+  margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 768px) {
+  .add-new-form {
+    margin-bottom: 0;
+  }
+}
