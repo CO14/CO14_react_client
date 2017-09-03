@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-// import {SIGNUP_REQUEST, LOGIN_REQUEST} from './action_types';
-
-import setAuthorizationToken from '../utilities/setAuthorizationToken';
+import setLocalStorage from '../utilities/setLocalStorage';
 
 const AUTH_URL = window.location.hostname === "localhost" ? "http://localhost:5000/auth" : "https://co14.herokuapp.com/auth";
 
@@ -21,11 +19,3 @@ export const userLoginRequest = (credentials) => {
     });
   }
 };
-
-const setLocalStorage = (res) => {
-  const token = res.data.token;
-  const id = res.data.id;
-  localStorage.setItem('Token', token);
-  localStorage.setItem('UserID', id);
-  setAuthorizationToken(token);
-}

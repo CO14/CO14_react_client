@@ -1,0 +1,26 @@
+.profile-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list-title {
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .profile-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.5em;
+  }
+}

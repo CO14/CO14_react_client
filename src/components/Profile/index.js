@@ -2,38 +2,61 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import {getAccountProfile} from '../../actions/actions_account';
+import {fetchUserProfile, fetchPeaks} from '../../actions/actions_account';
 
-import ProfileGoals from '../ProfileGoals';
+import ProfileList from '../ProfileList';
+import LoadingIcon from '../LoadingIcon';
+import ProfileAddNewGoal from '../ProfileAddNewGoal';
+
+import './profile.css';
 
 class Profile extends Component {
   componentDidMount() {
-    this.props.getAccountProfile(localStorage.UserID)
+    this.props.fetchUserProfile(localStorage.UserID);
+    this.props.fetchPeaks();
   }
-
   render() {
-    if (!this.props.account) {
-      console.log(this.props.account);
-      return "LOADING"
-    } else {
-      console.log(this.props.account);
+    if (!this.props.isReceived) {
       return (
-        <div>
-          <ProfileGoals account={this.props.account}/>
-        </div>
+        <LoadingIcon />
+      );
+    } else {
+      return (
+        <section className="container">
+
+          <div className="profile-wrapper">
+            <div className="align-center">
+              <span className="inline"><h1 className="list-title">Goals</h1> <ProfileAddNewGoal peaks={this.props.peaks}/></span>
+              <div className="flex-container">
+                <ProfileList profile={this.props.profile} complete={false} />
+              </div>
+            </div>
+            <div className="align-center">
+              <h1 className="list-title">Complete</h1>
+              <div className="flex-container">
+                <ProfileList profile={this.props.profile} complete={true} />
+              </div>
+            </div>
+          </div>
+        </section>
       );
     }
-
   }
 }
 
+  const mapStateToProps = (state) => {
+    return {
+      isReceived: state.account.isReceived,
+      profile: state.account.profile,
+      peaks: state.peaks.peaks
+    };
+  }
 
-const mapStateToProps = (state) => {
-  return {account: state.account};
-}
+  const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+      fetchUserProfile,
+      fetchPeaks
+    }, dispatch);
+  }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({getAccountProfile}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+  export default connect(mapStateToProps, mapDispatchToProps)(Profile);

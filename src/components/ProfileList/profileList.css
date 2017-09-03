@@ -1,0 +1,39 @@
+.goal-thumbnail {
+  object-fit: cover;
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+td, th {
+  vertical-align: middle;
+  letter-spacing: 1px;
+  border-top: 1px solid black;
+  padding: 0.5em 0.1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.edit-button {
+  cursor: pointer;
+  border: 1px solid #5F5AA2;
+  color: #5F5AA2;
+  padding: 1em;
+  width: 100%;
+}
+
+.edit-button:hover {
+  background: #5F5AA2;
+  opacity: 0.4;
+  color: #fbf5f3;
+}
+
+@media only screen and (min-width: 768px) {
+  .goal-thumbnail {
+    height: 5em;
+  }
+}

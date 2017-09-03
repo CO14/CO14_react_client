@@ -32,6 +32,10 @@ body {
   margin-right: auto;
 }
 
+.align-center {
+  text-align: center;
+}
+
 /* ---- FORM ELEMENTS ---- */
 .input {
   display: inline-block;
