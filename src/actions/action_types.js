@@ -10,3 +10,6 @@ export const PEAK_RECEIVED = 'PEAK_RECEIVED';
 export const PEAK_ERROR = 'PEAK_ERROR';
 
 export const EDIT_POST_REQUEST = 'EDIT_POST_REQUEST';
+
+export const NEW_POST_REQUEST = 'NEW_POST_REQUEST';
+export const NEW_POST_SUCCESS = 'NEW_POST_SUCCESS';

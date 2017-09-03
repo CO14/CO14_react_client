@@ -46,6 +46,14 @@ export const fetchPeaks = () => {
 
 export const addNewGoal = (userID, peak) => {
   return dispatch => {
-    return axios.post(`${API_URL}/users/${userID}/peaks`, peak);
+    dispatch({
+      type: types.NEW_POST_REQUEST
+    });
+    axios.post(`${API_URL}/users/${userID}/peaks`, peak)
+    .then(response => {
+      dispatch({
+        type: types.NEW_POST_SUCCESS,
+      });
+    });
   }
 };
