@@ -22,7 +22,6 @@ class Profile extends Component {
     } else {
       return (
         <section className="container">
-
           <div className="profile-wrapper">
             <div className="align-center">
               <span className="inline">

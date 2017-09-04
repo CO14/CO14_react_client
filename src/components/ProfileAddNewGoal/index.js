@@ -17,21 +17,23 @@ class ProfileAddNewGoal extends Component {
       peak_id: 0
     }
     this.handleChange = this.handleChange.bind(this);
-    this.addNew = this.addNew.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    let newPeakID = {...this.state.peak_id}
+    let newPeakID = {
+      ...this.state.peak_id
+    }
     newPeakID = parseInt(event.target.value, 10);
     this.setState({peak_id: newPeakID});
   }
 
-  addNew(event) {
+  handleSubmit(event) {
     event.preventDefault();
-    this.props.addNewGoal(localStorage.UserID, this.state)
-    .then(res => {
+    this.props.addNewGoal(localStorage.UserID, this.state).then(res => {
       this.props.fetchUserProfile(localStorage.UserID);
     });
+    this.formReset.reset();
   }
 
   render() {
@@ -40,7 +42,7 @@ class ProfileAddNewGoal extends Component {
     });
 
     return (
-      <form className="add-new-form" onSubmit={this.addNew}>
+      <form className="add-new-form" onSubmit={this.handleSubmit} ref={(elem) => this.formReset = elem}>
         <span>
           <select onChange={this.handleChange}>
             <option>Pick A New CO14 to Scale</option>
