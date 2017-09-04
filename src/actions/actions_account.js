@@ -5,11 +5,11 @@ import * as types from './action_types';
 const API_URL = window.location.hostname === "localhost" ? "http://localhost:5000/api/v1" : "https://co14.herokuapp.com/api/v1";
 
 export const fetchUserProfile = (userID) => {
-  return dispatch => {
+  return (dispatch) => {
     dispatch({
       type: types.ACCOUNT_PROFILE_REQUEST
     });
-    axios.get(`${API_URL}/users/${userID}`)
+    return axios.get(`${API_URL}/users/${userID}`)
     .then(response => {
       dispatch({
         type: types.ACCOUNT_PROFILE_RECEIVED,
@@ -25,11 +25,11 @@ export const fetchUserProfile = (userID) => {
 }
 
 export const fetchPeaks = () => {
-  return dispatch => {
+  return (dispatch) => {
     dispatch({
       type: types.PEAK_REQUEST
     });
-    axios.get(`${API_URL}/peaks`)
+    return axios.get(`${API_URL}/peaks`)
     .then(response => {
       dispatch({
         type: types.PEAK_RECEIVED,
@@ -45,7 +45,21 @@ export const fetchPeaks = () => {
 }
 
 export const addNewGoal = (userID, peak) => {
-  return dispatch => {
-    return axios.post(`${API_URL}/users/${userID}/peaks`, peak);
+  return (dispatch) => {
+    dispatch({
+      type: types.NEW_POST_REQUEST
+    });
+    return axios.post(`${API_URL}/users/${userID}/peaks`, peak)
+    .then(response => {
+      dispatch({
+        type: types.NEW_POST_SUCCESS,
+        payload: response.data
+      });
+    }).catch(error => {
+      dispatch({
+        type: types.NEW_POST_ERROR,
+        payload: error
+      });
+    });
   }
 };

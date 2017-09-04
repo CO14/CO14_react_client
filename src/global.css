@@ -55,9 +55,10 @@ body {
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  background: transparent;
-  border: 0.1em solid #5F5AA2;
+  background: linear-gradient(90deg,#343539, #5F5AA2);
+  border: 0.1em solid #343539;
   border-radius: 100px;
+  color: #FFF;
   padding: 1em 0.5em;
   margin: 0.5em 0 0 0;
   text-transform: uppercase;
