@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// import ProfileEditPost from '../ProfileEditPost';
+
 const ProfileUserData = props => {
   const {profile} = props;
 
   return(
     <section className="user-profile">
-      <div className="inline">
-        <div className="inline center-sm">
+      <div className="inline-profile">
+        <div className="inline-profile center-sm">
           <img alt={`${profile.first_name} ${profile.last_name}`} src={profile.profile_image} className="profile-image"/>
           <div className="social-icon-group">
             <h2 className="user-name">{profile.first_name} {profile.last_name}</h2>
@@ -18,7 +20,6 @@ const ProfileUserData = props => {
         </div>
         <button className="center-sm edit-button"><i className="fa fa-pencil"></i> Edit Profile</button>
       </div>
-
     </section>
   );
 }

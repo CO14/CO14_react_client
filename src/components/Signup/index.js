@@ -8,7 +8,14 @@ const Signup = props => {
   return(
     <section className="container">
       <h1>Create A New Account</h1>
-      <SignupForm />
+      <div className="signup-wrapper">
+        <div>
+          
+        </div>
+        <div>
+          <SignupForm />
+        </div>
+      </div>
     </section>
   );
 }

@@ -18,7 +18,7 @@ class Profile extends Component {
   }
 
   editPostItem() {
-    console.log("Click");
+    console.log("Clicked");
   }
 
   render() {
@@ -32,16 +32,25 @@ class Profile extends Component {
             <div className="align-center">
               <span className="inline">
                 <h1 className="list-title">Goals</h1>
-                <ProfileAddNewGoal peaks={this.props.peaks} addNewGoal={this.props.addNewGoal} fetchUserProfile={this.props.fetchUserProfile}/>
+                <ProfileAddNewGoal
+                  peaks={this.props.peaks}
+                  addNewGoal={this.props.addNewGoal}
+                  fetchUserProfile={this.props.fetchUserProfile}/>
               </span>
               <div className="flex-container">
-                <ProfileList profile={this.props.profile} complete={false} editPostItem={this.editPostItem}/>
+                <ProfileList
+                  profile={this.props.profile}
+                  complete={false}
+                  editPostItem={this.editPostItem}/>
               </div>
             </div>
             <div className="align-center">
               <h1 className="list-title">Complete</h1>
               <div className="flex-container">
-                <ProfileList profile={this.props.profile} complete={true} editPostItem={this.editPostItem}/>
+                <ProfileList
+                  profile={this.props.profile}
+                  complete={true}
+                  editPostItem={this.editPostItem}/>
               </div>
             </div>
           </div>
