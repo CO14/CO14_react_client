@@ -29,6 +29,7 @@ class ProfileAddNewGoal extends Component {
   addNew(event) {
     event.preventDefault();
     this.props.addNewGoal(localStorage.UserID, this.state);
+    
   }
 
   render() {

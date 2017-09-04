@@ -13,7 +13,7 @@ import isLoggedIn from '../../utilities/isLoggedIn';
 
 import './main.css';
 
-const Main = props => {
+const Main = () => {
   return(
     <main className="body_content">
       <Switch>

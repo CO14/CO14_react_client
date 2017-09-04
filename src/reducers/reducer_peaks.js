@@ -7,7 +7,6 @@ const INITIAL_STATE = {
   error: null
 };
 
-
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.PEAK_REQUEST:
