@@ -51,7 +51,6 @@ export const addNewGoal = (userID, peak) => {
     });
     return axios.post(`${API_URL}/users/${userID}/peaks`, peak)
     .then(response => {
-      console.log(response.data);
       dispatch({
         type: types.NEW_POST_SUCCESS,
         payload: response.data

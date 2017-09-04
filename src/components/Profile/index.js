@@ -27,7 +27,7 @@ class Profile extends Component {
             <div className="align-center">
               <span className="inline">
                 <h1 className="list-title">Goals</h1>
-                <ProfileAddNewGoal peaks={this.props.peaks} addNewGoal={this.props.addNewGoal}/>
+                <ProfileAddNewGoal peaks={this.props.peaks} addNewGoal={this.props.addNewGoal} fetchUserProfile={this.props.fetchUserProfile}/>
               </span>
               <div className="flex-container">
                 <ProfileList profile={this.props.profile} complete={false}/>
