@@ -23,7 +23,9 @@ table {
   border: 1px solid #5F5AA2;
   color: #5F5AA2;
   padding: 1em;
-  width: 100%;
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .edit-button:hover {

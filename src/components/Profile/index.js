@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 import {fetchUserProfile, fetchPeaks, addNewGoal} from '../../actions/actions_account';
 
+import ProfileUserData from '../ProfileUserData';
 import ProfileList from '../ProfileList';
 import LoadingIcon from '../LoadingIcon';
 import ProfileAddNewGoal from '../ProfileAddNewGoal';
@@ -16,12 +17,17 @@ class Profile extends Component {
     this.props.fetchPeaks();
   }
 
+  editPostItem() {
+    console.log("Click");
+  }
+
   render() {
     if (!this.props.isReceived) {
-      return (<LoadingIcon/>);
+      return (<LoadingIcon />);
     } else {
       return (
-        <section className="container">
+        <section className="container profile-container">
+          <ProfileUserData profile={this.props.profile}/>
           <div className="profile-wrapper">
             <div className="align-center">
               <span className="inline">
@@ -29,13 +35,13 @@ class Profile extends Component {
                 <ProfileAddNewGoal peaks={this.props.peaks} addNewGoal={this.props.addNewGoal} fetchUserProfile={this.props.fetchUserProfile}/>
               </span>
               <div className="flex-container">
-                <ProfileList profile={this.props.profile} complete={false}/>
+                <ProfileList profile={this.props.profile} complete={false} editPostItem={this.editPostItem}/>
               </div>
             </div>
             <div className="align-center">
               <h1 className="list-title">Complete</h1>
               <div className="flex-container">
-                <ProfileList profile={this.props.profile} complete={true}/>
+                <ProfileList profile={this.props.profile} complete={true} editPostItem={this.editPostItem}/>
               </div>
             </div>
           </div>
