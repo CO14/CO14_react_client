@@ -55,7 +55,7 @@ class SignupForm extends Component {
           type="text"
           name="first_name"
           placeholder="First Name"
-          value={this.state.account.firstName}
+          value={this.state.account.first_name}
           onChange={this.onInputChange}
         />
         <TextField
@@ -63,7 +63,7 @@ class SignupForm extends Component {
           type="text"
           name="last_name"
           placeholder="Last Name"
-          value={this.state.account.lastName}
+          value={this.state.account.last_name}
           onChange={this.onInputChange}
         />
         <TextField

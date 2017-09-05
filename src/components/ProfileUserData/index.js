@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 // import ProfileEditPost from '../ProfileEditPost';
 
@@ -18,7 +19,7 @@ const ProfileUserData = props => {
             <a href={profile.twitter_url} className="social-icons"><i className="fa fa-twitter fa-lg"></i></a>
           </div>
         </div>
-        <button className="center-sm edit-button"><i className="fa fa-pencil"></i> Edit Profile</button>
+        <Link to="/profile/edit"><button className="center-sm edit-button"><i className="fa fa-pencil"></i> Edit Profile</button></Link>
       </div>
     </section>
   );

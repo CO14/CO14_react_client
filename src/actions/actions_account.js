@@ -44,6 +44,26 @@ export const fetchPeaks = () => {
   }
 }
 
+
+export const updateUserProfileRequest = (profile, userID) => {
+  return dispatch => {
+    dispatch({
+      type: types.UPDATE_PROFILE_REQUEST
+    });
+    return axios.post(`${API_URL}/users/${userID}`, profile)
+      .then(response => {
+        dispatch({
+          type: types.UPDATE_PROFILE_SUCCESS,
+          payload: response.data
+        });
+    }).catch(error => {
+      dispatch({
+        type: types.UPDATE_PROFILE_ERROR
+      });
+    });
+  }
+};
+
 export const addNewGoal = (userID, peak) => {
   return (dispatch) => {
     dispatch({
