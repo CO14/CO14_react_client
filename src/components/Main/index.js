@@ -6,6 +6,7 @@ import Peaks from '../Peaks';
 import About from '../About';
 import Contact from '../Contact';
 import Signup from '../Signup';
+import ProfileEdit from '../ProfileEdit';
 import Profile from '../Profile';
 import PrivacyPolicy from '../PrivacyPolicy';
 
@@ -22,6 +23,7 @@ const Main = () => {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/signup" component={Signup} />
+        <Route path="/profile/edit" component={ProfileEdit} />
         <Route path="/profile/" component={Profile} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
       </Switch>

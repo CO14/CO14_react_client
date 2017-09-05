@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 
 import TextField from '../TextField';
 
-class Modal extends Component {
+class ModalEditPost extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,6 +13,7 @@ class Modal extends Component {
         account_image_url: '',
         date_complete: ''
       }
+    }
       this.openModal = this.openModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
   }
@@ -53,4 +54,4 @@ class Modal extends Component {
   }
 }
 
-export default Modal;
+export default ModalEditPost;

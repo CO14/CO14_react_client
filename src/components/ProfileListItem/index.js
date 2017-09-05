@@ -20,7 +20,7 @@ const ProfileListItem = props => {
       </td>
       <td className="align-center">
         <small>
-          <a className="edit-button">
+          <a className="edit-button" onClick={props.editPostItem}>
             <i className="fa fa-pencil fa-lg"></i>
           </a>
         </small>
