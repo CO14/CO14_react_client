@@ -55,7 +55,6 @@ export const updateUserProfileRequest = (profile, userID) => {
         console.log(response);
         dispatch({
           type: types.UPDATE_PROFILE_SUCCESS,
-          payload: response.data
         });
     }).catch(error => {
       dispatch({
