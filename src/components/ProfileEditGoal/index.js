@@ -4,23 +4,10 @@ import {connect} from 'react-redux';
 
 import {fetchUserProfile} from '../../actions/actions_account';
 
+import EditCompleteGoal from '../EditCompleteGoal';
+import EditIncompleteGoal from '../EditIncompleteGoal';
+
 import LoadingIcon from '../LoadingIcon';
-
-const CompleteNewGoal = () => {
-  return (
-    <form>
-      This is a Goal
-    </form>
-  );
-}
-
-const UpdateCompletedGoal = () => {
-  return (
-    <form>
-      this is complete
-    </form>
-  );
-}
 
 class ProfileEditGoal extends Component {
   componentDidMount() {
@@ -39,7 +26,7 @@ class ProfileEditGoal extends Component {
       const isComplete = peak.is_complete;
       return(
         <section className="container">
-          {isComplete ? <UpdateCompletedGoal/> : <CompleteNewGoal />}
+          {isComplete ? <EditCompleteGoal/> : <EditIncompleteGoal />}
         </section>
       );
     }
