@@ -59,6 +59,7 @@ class ProfileEdit extends Component {
     } else {
       return(
         <section className="container">
+          <h2>EDIT PROFILE</h2>
           <form className="edit-profile-form" onSubmit={this.handleSubmit}>
             <TextField
               className="input"
