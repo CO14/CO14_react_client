@@ -50,8 +50,9 @@ export const updateUserProfileRequest = (profile, userID) => {
     dispatch({
       type: types.UPDATE_PROFILE_REQUEST
     });
-    return axios.post(`${API_URL}/users/${userID}`, profile)
+    return axios.put(`${API_URL}/users/${userID}`, profile)
       .then(response => {
+        console.log(response);
         dispatch({
           type: types.UPDATE_PROFILE_SUCCESS,
           payload: response.data

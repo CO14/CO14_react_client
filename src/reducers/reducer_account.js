@@ -18,8 +18,14 @@ export default (state = INITIAL_STATE, action) => {
     case types.NEW_POST_REQUEST:
       return { ...state, isFetching: true }
     case types.NEW_POST_SUCCESS:
-      // console.log(action.paylod);
       return {...state, isFetching: false, isReceived: true}
+    case types.UPDATE_PROFILE_REQUEST:
+      return { ...state, isFetching: true }
+    case types.UPDATE_PROFILE_SUCCESS:
+      return { ...state, isFetching: false, isReceived: true}
+    case types.UPDATE_PROFILE_ERROR:
+      return { ...state, isFetching: false, error: action.payload }
+
     default:
       return state;
   }
