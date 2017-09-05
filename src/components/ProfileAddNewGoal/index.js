@@ -21,9 +21,7 @@ class ProfileAddNewGoal extends Component {
   }
 
   handleChange(event) {
-    let newPeakID = {
-      ...this.state.peak_id
-    }
+    let newPeakID = {...this.state.peak_id}
     newPeakID = parseInt(event.target.value, 10);
     this.setState({peak_id: newPeakID});
   }

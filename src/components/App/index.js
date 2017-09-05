@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <section className="body">
         <Header />
-        <Main />
+        <Main profile={this.props.profile}/>
         <Footer className="footer"/>
       </section>
     );
@@ -26,7 +26,9 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    profile: state.account.profile
+  };
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

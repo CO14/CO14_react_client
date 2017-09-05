@@ -30,7 +30,6 @@ const Main = () => {
         <Route path="/privacy-policy" component={PrivacyPolicy} />
       </Switch>
     </main>
-
   );
 }
 
