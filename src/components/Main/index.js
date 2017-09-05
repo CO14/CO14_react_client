@@ -7,6 +7,7 @@ import About from '../About';
 import Contact from '../Contact';
 import Signup from '../Signup';
 import ProfileUserEdit from '../ProfileUserEdit';
+import ProfileEditGoal from '../ProfileEditGoal';
 import Profile from '../Profile';
 import PrivacyPolicy from '../PrivacyPolicy';
 
@@ -23,6 +24,7 @@ const Main = () => {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/signup" component={Signup} />
+        <Route path="/profile/edit/post/:peakID" component={ProfileEditGoal} />
         <Route path="/profile/edit" component={ProfileUserEdit} />
         <Route path="/profile/" component={Profile} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />

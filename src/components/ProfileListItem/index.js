@@ -1,8 +1,9 @@
 import React from 'react';
 
-
+import {Link} from 'react-router-dom';
 
 const ProfileListItem = props => {
+
   return(
     <tr>
       <td><img className="goal-thumbnail" src={props.peak.peak_image_url} alt={props.peak.peak_name}/></td>
@@ -20,9 +21,9 @@ const ProfileListItem = props => {
       </td>
       <td className="align-center">
         <small>
-          <a className="edit-button" onClick={props.editPostItem}>
+          <Link className="edit-button" to={`/profile/edit/post/${props.peak.account_peak_id}`}>
             <i className="fa fa-pencil fa-lg"></i>
-          </a>
+          </Link>
         </small>
       </td>
     </tr>

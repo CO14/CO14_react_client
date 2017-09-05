@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
 import {fetchUserProfile, fetchPeaks, addNewGoal} from '../../actions/actions_account';
 
@@ -15,10 +16,6 @@ class Profile extends Component {
   componentDidMount() {
     this.props.fetchUserProfile(localStorage.UserID);
     this.props.fetchPeaks();
-  }
-
-  editPostItem() {
-    console.log("Clicked");
   }
 
   render() {
@@ -41,7 +38,7 @@ class Profile extends Component {
                 <ProfileList
                   profile={this.props.profile}
                   complete={false}
-                  editPostItem={this.editPostItem}/>
+                  />
               </div>
             </div>
             <div className="align-center">
@@ -50,7 +47,7 @@ class Profile extends Component {
                 <ProfileList
                   profile={this.props.profile}
                   complete={true}
-                  editPostItem={this.editPostItem}/>
+                  />
               </div>
             </div>
           </div>
