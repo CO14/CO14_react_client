@@ -15,10 +15,9 @@ class ProfileEdit extends Component {
     this.state = {
       redirectToProfile: false,
       account: {
-        id: localStorage.UserID,
+        id: parseInt(localStorage.UserID, 10),
         first_name: '',
         last_name: '',
-        email: '',
         image: '',
         password: '',
         facebook_url: '',
@@ -60,7 +59,7 @@ class ProfileEdit extends Component {
     } else {
       return(
         <section className="container">
-          <form onSubmit={this.handleSubmit}>
+          <form className="edit-profile-form" onSubmit={this.handleSubmit}>
             <TextField
               className="input"
               type="text"
@@ -75,14 +74,6 @@ class ProfileEdit extends Component {
               name="last_name"
               placeholder="Last Name"
               value={this.state.account.last_name}
-              onChange={this.onInputChange}
-            />
-            <TextField
-              className="input"
-              type="text"
-              name="email"
-              placeholder="Email"
-              value={this.state.account.email}
               onChange={this.onInputChange}
             />
             <TextField

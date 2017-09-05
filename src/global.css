@@ -74,8 +74,16 @@ a {
 
 .center-sm {
   text-align: center;
-  justify-content: center;
-  width: 100%;
+}
+
+.text-align {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .center-sm {
+    text-align: left;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -91,8 +99,4 @@ a {
     width: 90%;
   }
 
-  .center-sm {
-    text-align: inherit;
-    width: inherit;
-  }
 }

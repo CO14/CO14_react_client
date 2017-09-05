@@ -2,14 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
-// import ProfileEditPost from '../ProfileEditPost';
-
 const ProfileUserData = props => {
   const {profile} = props;
 
   return(
     <section className="user-profile">
-      <div className="inline-profile">
+      <div className="inline-profile text-align">
         <div className="inline-profile center-sm">
           <img alt={`${profile.first_name} ${profile.last_name}`} src={profile.profile_image} className="profile-image"/>
           <div className="social-icon-group">
