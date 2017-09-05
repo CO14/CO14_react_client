@@ -17,10 +17,6 @@ class Profile extends Component {
     this.props.fetchPeaks();
   }
 
-  editPostItem() {
-    console.log("Clicked");
-  }
-
   render() {
     if (!this.props.isReceived) {
       return (<LoadingIcon />);
@@ -41,7 +37,7 @@ class Profile extends Component {
                 <ProfileList
                   profile={this.props.profile}
                   complete={false}
-                  editPostItem={this.editPostItem}/>
+                  />
               </div>
             </div>
             <div className="align-center">
@@ -50,7 +46,7 @@ class Profile extends Component {
                 <ProfileList
                   profile={this.props.profile}
                   complete={true}
-                  editPostItem={this.editPostItem}/>
+                  />
               </div>
             </div>
           </div>

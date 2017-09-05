@@ -10,7 +10,7 @@ const ProfileList = props => {
   const peak = props.profile.peak;
 
   const peaks = peak.map((peak, index) => {
-    return peak.is_complete === props.complete && <ProfileListItem peak={peak} key={index} editPostItem={props.editPostItem}/>
+    return peak.is_complete === props.complete && <ProfileListItem peak={peak} key={index} />
   });
 
   return(
