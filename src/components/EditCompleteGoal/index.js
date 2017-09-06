@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const EditCompleteGoal = props => {
-  return(
-    <div className="container">
-      EDIT COMPLETE GOAL
-    </div>
-  );
+class EditCompleteGoal extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div>
+        EDIT COMPLETE GOAL
+      </div>
+    );
+  }
 }
 
 export default EditCompleteGoal;

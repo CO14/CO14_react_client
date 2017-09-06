@@ -2,7 +2,7 @@ import React from 'react';
 
 const Peaks = props => {
   return(
-    <div>
+    <div className="container">
       PEAKS
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const PrivacyPolicy = props => {
   return(
-    <div>
+    <div className="container">
       PRIVACY POLICY
     </div>
   );
