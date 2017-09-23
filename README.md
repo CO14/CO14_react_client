@@ -32,6 +32,12 @@ From the command line run the following:
 ```
 git clone git@github.com:CO14/CO14_react_client.git
 
+cd ./CO14_react_client
+
+npm install
+
+npm start
+
 ```
 ## Built With
 
