@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { API_URL } from '../utilities/API';
 
 import * as types from './action_types';
 
-const API_URL = window.location.hostname === "localhost" ? "http://localhost:5000/api/v1" : "https://co14.herokuapp.com/api/v1";
+
 
 export const fetchUserProfile = (userID) => {
   return (dispatch) => {
@@ -16,7 +17,7 @@ export const fetchUserProfile = (userID) => {
           type: types.ACCOUNT_PROFILE_RECEIVED,
           payload: response.data[0]
         });
-      }, 1000)
+      }, 600)
     }).catch(error => {
       dispatch({
         type: types.ACCOUNT_PROFILE_ERROR,

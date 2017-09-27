@@ -18,6 +18,7 @@ class ProfileEditGoal extends Component {
     if (!this.props.isReceived) {
       return (<LoadingIcon />);
     } else {
+      console.log(this.props);
       const {profile, match} = this.props;
       const peakProp = profile.peak;
       const peak = peakProp.find(peak => {

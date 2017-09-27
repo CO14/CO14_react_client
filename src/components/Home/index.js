@@ -7,7 +7,7 @@ import HomeDetails from '../HomeDetails';
 
 import './home.css';
 
-const Home = props => {
+const Home = () => {
   return(
     <section>
       <Splash />
