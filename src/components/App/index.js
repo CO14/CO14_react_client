@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
+import { API } from '../../utilities/API';
 import './app.css';
 
 import Header from '../Header';
@@ -10,6 +11,10 @@ import Main from '../Main';
 import Footer from '../Footer';
 
 class App extends Component {
+  componentDidMount() {
+    API.serverWakeUp();
+  }
+
   render() {
     return (
       <section className="body">

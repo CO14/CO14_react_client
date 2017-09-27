@@ -1,10 +1,6 @@
 import axios from 'axios';
-
 import setLocalStorage from '../utilities/setLocalStorage';
-
-const AUTH_URL = window.location.hostname === "localhost"
-  ? "http://localhost:5000/auth"
-  : "https://co14.herokuapp.com/auth";
+import { AUTH_URL } from '../utilities/API';
 
 export const userSignupRequest = (userData) => {
   return dispatch => {
