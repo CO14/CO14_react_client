@@ -18,16 +18,15 @@ class ProfileEditGoal extends Component {
     if (!this.props.isReceived) {
       return (<LoadingIcon />);
     } else {
-      console.log(this.props);
       const {profile, match} = this.props;
-      const peakProp = profile.peak;
-      const peak = peakProp.find(peak => {
+      const allUserPeaks = profile.peak;
+      const peak = allUserPeaks.find(peak => {
         return peak.account_peak_id === parseInt(match.params.peak_account_ID, 10);
       });
       const isComplete = peak.is_complete;
       return(
         <section className="container">
-          {isComplete ? <EditCompleteGoal/> : <EditIncompleteGoal />}
+          {isComplete ? <EditCompleteGoal peakInfo={peak}/> : <EditIncompleteGoal peakInfo={peak}/>}
         </section>
       );
     }
