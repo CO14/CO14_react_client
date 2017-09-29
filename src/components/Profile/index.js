@@ -19,7 +19,7 @@ class Profile extends Component {
 
   render() {
     if (!this.props.isReceived) {
-      return (<LoadingIcon />);
+      return <LoadingIcon />;
     } else {
       return (
         <section className="container profile-container">
