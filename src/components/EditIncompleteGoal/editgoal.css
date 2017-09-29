@@ -21,7 +21,7 @@
   background: transparent;
   border: 0.1em solid #5F5AA2;
   padding: 1em 0.5em;
-  margin: 0.5em 0;
+  margin: 0.5em 0 0 0;
   text-transform: uppercase;
   width: 100%;
 }
@@ -29,6 +29,22 @@
 .edit-input:focus,.edit-textarea:focus  {
   outline: none;
   box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+.edit-goal-button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(90deg, #5F5AA2, #5F5AA2);
+  border: 0.13em solid #343539;
+  color: #FFF;
+  padding: 1em 0.5em;
+  margin: 0 0 0.5em 0;
+  text-transform: uppercase;
+  min-width: 10em;
+  height: 3.5em;
+  max-height: 3.5em;
+  width: 100%;
 }
 
 .edit-goal-image {
@@ -42,9 +58,45 @@
   grid-template-columns: 1fr;
 }
 
+.button-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.edit-goal-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+
+.edit-goal-header > div {
+  text-align: center;
+}
+
+.edit-goal-title {
+  font-weight: 700;
+  color: #5F5AA2;
+}
+
+.edit-goal-section {
+  margin-bottom: 1em;
+}
+
 @media only screen and (min-width: 768px) {
   .edit-goal-wrapper {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1em;
+  }
+  .edit-goal-header {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .button-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.5em;
   }
 }
