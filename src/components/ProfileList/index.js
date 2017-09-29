@@ -7,7 +7,7 @@ import ProfileListItem from '../ProfileListItem';
 import './profileList.css';
 
 const ProfileList = props => {
-  const peak = props.profile.peak;
+  const { peak } = props.profile;
 
   const peaks = peak.map((peak, index) => {
     return peak.is_complete === props.complete && <ProfileListItem peak={peak} key={index} />

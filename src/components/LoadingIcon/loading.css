@@ -1,6 +1,6 @@
 .cssload-container {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
 }
 .cssload-triangles {
@@ -18,10 +18,10 @@
 .cssload-tri {
 	position: absolute;
 	animation: cssload-pulse 862.5ms ease-in infinite;
-		-o-animation: cssload-pulse 862.5ms ease-in infinite;
-		-ms-animation: cssload-pulse 862.5ms ease-in infinite;
-		-webkit-animation: cssload-pulse 862.5ms ease-in infinite;
-		-moz-animation: cssload-pulse 862.5ms ease-in infinite;
+	-o-animation: cssload-pulse 862.5ms ease-in infinite;
+	-ms-animation: cssload-pulse 862.5ms ease-in infinite;
+	-webkit-animation: cssload-pulse 862.5ms ease-in infinite;
+	-moz-animation: cssload-pulse 862.5ms ease-in infinite;
 	border-top: 25px solid rgb(95,90,162);
 	border-left: 14px solid transparent;
 	border-right: 14px solid transparent;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Mukta+Mahee|Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Source+Code+Pro|Mukta+Mahee');
 
 * {
   box-sizing: border-box;
@@ -8,6 +8,12 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: 'Mukta Mahee', sans-serif;
+}
+
+textarea {
+  margin: 0;
+  padding: 0;
+  resize: none;
 }
 
 /* ---- LAYOUT ---- */
