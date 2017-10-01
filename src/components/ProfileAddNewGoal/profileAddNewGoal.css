@@ -9,7 +9,7 @@
   padding: 1.5em 0;
   width: 5em;
   color: #FFF;
-  background: linear-gradient(90deg, #343539, #5F5AA2);
+  background: linear-gradient(90deg, #5F5AA2, #343539);
 }
 
 .add-button:hover {
@@ -18,7 +18,7 @@
   opacity: 0.8;
 }
 
-.add-button:focus {
+.add-button:focus, select:focus {
   outline: none;
 }
 
@@ -28,10 +28,10 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  -webkit-border-radius: 0px;
   background: none;
   border-style: none;
   border: 1px solid #5F5AA2;
-  /*border-radius: 100px;*/
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   color: #5F5AA2;

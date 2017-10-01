@@ -26,7 +26,7 @@ class ProfileEditGoal extends Component {
       const isComplete = peak.is_complete;
       return(
         <section className="container">
-          {isComplete ? <EditCompleteGoal peakInfo={peak}/> : <EditIncompleteGoal peakInfo={peak}/>}
+          {isComplete ? <EditCompleteGoal peak={peak}/> : <EditIncompleteGoal peak={peak}/>}
         </section>
       );
     }

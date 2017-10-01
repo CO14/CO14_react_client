@@ -15,7 +15,7 @@
 }
 
 .subscribe-form-item:focus {
-
+  outline: none;
 }
 
 .subscribe-form {
