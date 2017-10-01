@@ -35,6 +35,8 @@
 .user-name {
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
 }
 
 .user-profile {

@@ -57,7 +57,7 @@ textarea {
   max-height: 3.5em;
 }
 
-.input:focus {
+.input:focus, .button:focus {
   outline: none;
   box-shadow: 1px 1px 1px 1px #ccc;
 }
