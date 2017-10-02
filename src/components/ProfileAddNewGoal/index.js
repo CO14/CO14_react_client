@@ -28,7 +28,8 @@ class ProfileAddNewGoal extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.addNewGoal(localStorage.UserID, this.state).then(res => {
+    this.props.addNewGoal(localStorage.UserID, this.state)
+    .then(res => {
       this.props.fetchUserProfile(localStorage.UserID);
     });
     this.formReset.reset();

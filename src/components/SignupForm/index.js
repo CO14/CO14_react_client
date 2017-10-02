@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-
 import {Redirect} from 'react-router-dom';
 
 import {userSignupRequest} from '../../actions/actions_auth';
-
+import {addNewGoal} from '../../actions/actions_account';
 import TextField from '../TextField';
 
 class SignupForm extends Component {
@@ -36,9 +35,22 @@ class SignupForm extends Component {
   submitSignup(event) {
     event.preventDefault();
     this.props.userSignupRequest(this.state.account)
-    .then(res => {
-      this.setState({redirectToProfile: true});
-    });
+    .then(() => {
+      const initialGoal = {
+        account_rating: 0,
+        account_image_url: "",
+        account_notes: "",
+        is_complete: false,
+        date_complete: (new Date()).toLocaleDateString(),
+        account_id: parseInt(localStorage.UserID, 10),
+        peak_id: 9
+      };
+      this.props.addNewGoal(localStorage.UserID, initialGoal)
+      .then(() => {
+        this.setState({redirectToProfile: true});
+      })
+    })
+    .catch(error => console.log(error));
   }
 
   render() {
@@ -82,16 +94,14 @@ class SignupForm extends Component {
           value={this.state.account.password}
           onChange={this.onInputChange}
         />
-
         <button type="submit" className="button">Sign up</button>
-
       </form>
     );
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({userSignupRequest}, dispatch);
+  return bindActionCreators({userSignupRequest, addNewGoal}, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(SignupForm);

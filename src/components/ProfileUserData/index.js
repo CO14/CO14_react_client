@@ -1,10 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ProfileUserData = props => {
-  const {profile} = props;
-
+  const { profile } = props;
   return(
     <section className="user-profile">
       <div className="inline-profile text-align">
@@ -24,7 +22,3 @@ const ProfileUserData = props => {
 }
 
 export default ProfileUserData;
-
-ProfileUserData.propTypes = {
-  profile: PropTypes.object.isRequired
-}

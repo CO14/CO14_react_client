@@ -23,7 +23,9 @@ class Profile extends Component {
     } else {
       return (
         <section className="container profile-container">
-          <ProfileUserData profile={this.props.profile}/>
+          <ProfileUserData
+            profile={this.props.profile}
+          />
           <div className="profile-wrapper">
             <div className="align-center">
               <span className="inline">
@@ -34,19 +36,17 @@ class Profile extends Component {
                   fetchUserProfile={this.props.fetchUserProfile}/>
               </span>
               <div className="flex-container">
-                <ProfileList
-                  profile={this.props.profile}
-                  complete={false}
-                  />
+                {this.props.profile.peak &&
+                  <ProfileList
+                    peak={this.props.profile.peak}
+                    complete={false}
+                    />}
               </div>
             </div>
             <div className="align-center">
               <h1 className="list-title">Complete</h1>
               <div className="flex-container">
-                <ProfileList
-                  profile={this.props.profile}
-                  complete={true}
-                  />
+                {this.props.profile.peak && <ProfileList peak={this.props.profile.peak} complete={true}/>}
               </div>
             </div>
           </div>
