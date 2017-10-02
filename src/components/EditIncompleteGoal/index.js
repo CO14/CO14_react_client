@@ -30,7 +30,7 @@ class EditIncompleteGoal extends Component {
               <textarea className="edit-textarea" placeholder="Notes" rows="5"></textarea>
               <div className="button-wrapper">
                 <button className="remove-button">REMOVE</button>
-                <button className="edit-goal-button">COMPLETE</button>
+                <button type="submit" className="edit-goal-button">COMPLETE</button>
               </div>
             </form>
           </div>

@@ -6,7 +6,7 @@ import ProfileListItem from '../ProfileListItem';
 import './profileList.css';
 
 const ProfileList = props => {
-  const { peak } = props.profile;
+  const { peak } = props;
 
   const peaks = peak.map((peak, index) => {
     return peak.is_complete === props.complete && <ProfileListItem peak={peak} key={index} />
@@ -34,7 +34,7 @@ const ProfileList = props => {
 export default ProfileList;
 
 ProfileList.propTypes = {
-  data: PropTypes.object,
+  peak: PropTypes.array,
   complete: PropTypes.bool.isRequired,
   editPost: PropTypes.func
 }

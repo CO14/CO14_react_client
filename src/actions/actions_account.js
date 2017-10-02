@@ -1,9 +1,6 @@
 import axios from 'axios';
 import { API_URL } from '../utilities/API';
-
-import * as types from './action_types';
-
-
+import * as types from './action.types';
 
 export const fetchUserProfile = (userID) => {
   return (dispatch) => {
