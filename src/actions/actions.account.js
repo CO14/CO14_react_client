@@ -14,7 +14,7 @@ export const fetchUserProfile = (userID) => {
           type: types.ACCOUNT_PROFILE_RECEIVED,
           payload: response.data[0]
         });
-      }, 600)
+      }, 400)
     }).catch(error => {
       dispatch({
         type: types.ACCOUNT_PROFILE_ERROR,

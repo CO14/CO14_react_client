@@ -1,9 +1,7 @@
 import React from 'react';
-
 import Logo from '../Logo';
 import Navigation from '../Navigation';
 import LoginForm from '../LoginForm';
-
 import isLoggedIn from '../../utilities/isLoggedIn';
 
 import './header.css';

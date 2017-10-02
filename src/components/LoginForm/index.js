@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
-import {userLoginRequest} from '../../actions/actions_auth';
+import {userLoginRequest} from '../../actions/actions.auth';
 
 import TextField from '../TextField';
 
