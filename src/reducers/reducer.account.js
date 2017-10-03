@@ -34,7 +34,7 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, isFetching: false, error: action.payload }
 
     case types.LOGOUT_REQUEST:
-      return INITIAL_STATE;
+      return { ...state, INITIAL_STATE};
 
     default:
       return state;
