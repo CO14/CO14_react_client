@@ -3,8 +3,8 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
-import {userSignupRequest} from '../../actions/actions_auth';
-import {addNewGoal} from '../../actions/actions_account';
+import {userSignupRequest} from '../../actions/actions.auth';
+import {addNewGoal} from '../../actions/actions.account';
 import TextField from '../TextField';
 
 class SignupForm extends Component {

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import {fetchUserProfile} from '../../actions/actions_account';
+import {fetchUserProfile} from '../../actions/actions.account';
 
 import EditCompleteGoal from '../EditCompleteGoal';
 import EditIncompleteGoal from '../EditIncompleteGoal';

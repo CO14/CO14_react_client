@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
-import {updateUserProfileRequest, fetchUserProfile} from '../../actions/actions_account';
+import {updateUserProfileRequest, fetchUserProfile} from '../../actions/actions.account';
 
 import TextField from '../TextField';
 import LoadingIcon from '../LoadingIcon';

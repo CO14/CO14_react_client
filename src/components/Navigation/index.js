@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import { userLogout } from '../../actions/actions_auth';
+import { userLogout } from '../../actions/actions.auth';
 import isLoggedIn from '../../utilities/isLoggedIn';
-
 import './navigation.css';
 
 const NavigationLoggedOut = () => {
@@ -27,7 +25,7 @@ const NavigationLoggedOut = () => {
   );
 };
 
-const NavigationLoggedIn = props => {
+const NavigationLoggedIn = () => {
   return (
     <ul className="nav-list">
       <li className="nav-list-item">
@@ -43,11 +41,15 @@ const NavigationLoggedIn = props => {
         <Link to="/contact" className="nav-links">Contact</Link>
       </li>
       <li className="nav-list-item">
-        <Link to="/" className="nav-links" onClick={() => props.userLogout()}>Logout</Link>
+        <Link to="/" className="nav-links" onClick={logout}>Logout</Link>
       </li>
     </ul>
   );
 };
+
+const logout = props => {
+  localStorage.clear();
+}
 
 const Navigation = props => {
   return(
@@ -58,7 +60,9 @@ const Navigation = props => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({userLogout}, dispatch)
-}
+  return bindActionCreators({
+    userLogout
+  }, dispatch);
+};
 
 export default connect(null, mapDispatchToProps)(Navigation);

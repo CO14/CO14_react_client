@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 
-import account from './reducer_account';
-import peaks from './reducer_peaks';
+import account from './reducer.account';
+import auth from './reducer.auth';
+import peaks from './reducer.peaks';
 
 const Reducers = combineReducers({
   account,
+  auth,
   peaks
 });
 

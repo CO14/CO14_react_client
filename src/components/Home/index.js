@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Splash from '../Splash';
 import HomeServices from '../HomeServices';
 import HomeBanner from '../HomeBanner';

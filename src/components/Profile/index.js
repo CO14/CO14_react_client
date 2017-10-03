@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-
-import {fetchUserProfile, fetchPeaks, addNewGoal} from '../../actions/actions_account';
-
+import {fetchUserProfile, fetchPeaks, addNewGoal} from '../../actions/actions.account';
 import ProfileUserData from '../ProfileUserData';
 import ProfileList from '../ProfileList';
 import LoadingIcon from '../LoadingIcon';
@@ -12,8 +10,8 @@ import ProfileAddNewGoal from '../ProfileAddNewGoal';
 import './profile.css';
 
 class Profile extends Component {
-  componentDidMount() {
-    this.props.fetchUserProfile(localStorage.UserID);
+  async componentDidMount() {
+    await this.props.fetchUserProfile(localStorage.UserID);
     this.props.fetchPeaks();
   }
 
@@ -33,14 +31,11 @@ class Profile extends Component {
                 <ProfileAddNewGoal
                   peaks={this.props.peaks}
                   addNewGoal={this.props.addNewGoal}
-                  fetchUserProfile={this.props.fetchUserProfile}/>
+                  fetchUserProfile={this.props.fetchUserProfile}
+                />
               </span>
               <div className="flex-container">
-                {this.props.profile.peak &&
-                  <ProfileList
-                    peak={this.props.profile.peak}
-                    complete={false}
-                    />}
+                {this.props.profile.peak && <ProfileList peak={this.props.profile.peak} complete={false}/>}
               </div>
             </div>
             <div className="align-center">
