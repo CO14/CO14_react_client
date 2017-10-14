@@ -36,3 +36,13 @@ export const userLogout = () => {
     dispatch({type: types.LOGOUT_REQUEST});
   }
 };
+
+export const updateLoginForm = ({ property, value }) => {
+  return {
+    type: types.AUTH_FORM_UPDATE,
+    payload: {
+      property,
+      value
+    }
+  };
+}
