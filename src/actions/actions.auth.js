@@ -7,12 +7,13 @@ export const userSignupRequest = (userData) => {
   return dispatch => {
     dispatch({type: types.SIGNUP_REQUEST});
     return axios.post(`${AUTH_URL}/signup`, userData)
-    .then(res => {
-      dispatch({type: types.SIGNUP_SUCCESS});
-      setLocalStorage(res);
+    .then(response => {
+      dispatch({type: types.SIGNUP_SUCCESS, payload: response.data});
+      setLocalStorage(response);
     })
     .catch(error => {
       dispatch({type: types.SIGNUP_ERROR, payload: error});
+      alert(error.response.data.message);
     });
   };
 };
@@ -21,12 +22,14 @@ export const userLoginRequest = (credentials) => {
   return dispatch => {
     dispatch({type: types.LOGIN_REQUEST});
     return axios.post(`${AUTH_URL}/login`, credentials)
-    .then(res => {
-      dispatch({type: types.LOGIN_SUCCESS});
-      setLocalStorage(res.data);
+    .then(response => {
+      console.log(response);
+      dispatch({type: types.LOGIN_SUCCESS, payload: response.data});
+      setLocalStorage(response.data);
     })
     .catch(error => {
       dispatch({type: types.LOGIN_ERROR, payload: error});
+      alert(error.response.data.message);
     });
   };
 };

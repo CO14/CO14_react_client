@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   isFetching: false,
   isReceived: false,
   error: null,
+  user: [],
   redirectToProfile: false,
   first_name: '',
   last_name: '',
@@ -32,7 +33,8 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
           isFetching: false,
           isReceived: true,
-          redirectToProfile: true
+          redirectToProfile: true,
+          user: action.payload
         };
 
     case types.LOGIN_ERROR:

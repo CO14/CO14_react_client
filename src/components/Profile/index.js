@@ -10,45 +10,43 @@ import ProfileAddNewGoal from '../ProfileAddNewGoal';
 import './profile.css';
 
 class Profile extends Component {
-  async componentDidMount() {
-    console.log(localStorage.UserID);
-    await this.props.fetchUserProfile(localStorage.UserID);
+  componentDidMount() {
+    this.props.fetchUserProfile(this.props.user.id || localStorage.UserID);
     this.props.fetchPeaks();
   }
 
   render() {
     if (!this.props.isReceived) {
       return <LoadingIcon />;
-    } else {
-      return (
-        <section className="container profile-container">
-          <ProfileUserData
-            profile={this.props.profile}
-          />
-          <div className="profile-wrapper">
-            <div className="align-center">
-              <span className="inline">
-                <h1 className="list-title">Goals</h1>
-                <ProfileAddNewGoal
-                  peaks={this.props.peaks}
-                  addNewGoal={this.props.addNewGoal}
-                  fetchUserProfile={this.props.fetchUserProfile}
-                />
-              </span>
-              <div className="flex-container">
-                {this.props.profile.peak && <ProfileList peak={this.props.profile.peak} complete={false}/>}
-              </div>
-            </div>
-            <div className="align-center">
-              <h1 className="list-title">Complete</h1>
-              <div className="flex-container">
-                {this.props.profile.peak && <ProfileList peak={this.props.profile.peak} complete={true}/>}
-              </div>
+    }
+    return (
+      <section className="container profile-container">
+        <ProfileUserData
+          profile={this.props.profile}
+        />
+        <div className="profile-wrapper">
+          <div className="align-center">
+            <span className="inline">
+              <h1 className="list-title">Goals</h1>
+              <ProfileAddNewGoal
+                peaks={this.props.peaks}
+                addNewGoal={this.props.addNewGoal}
+                fetchUserProfile={this.props.fetchUserProfile}
+              />
+            </span>
+            <div className="flex-container">
+              {this.props.profile.peak && <ProfileList peak={this.props.profile.peak} complete={false}/>}
             </div>
           </div>
-        </section>
-      );
-    }
+          <div className="align-center">
+            <h1 className="list-title">Complete</h1>
+            <div className="flex-container">
+              {this.props.profile.peak && <ProfileList peak={this.props.profile.peak} complete={true}/>}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
   }
 }
 
@@ -56,7 +54,8 @@ const mapStateToProps = (state) => {
   return {
     isReceived: state.account.isReceived,
     profile: state.account.profile,
-    peaks: state.peaks.peaks
+    peaks: state.peaks.peaks,
+    user: state.auth.user
   };
 }
 
