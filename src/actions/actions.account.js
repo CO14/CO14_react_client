@@ -52,7 +52,6 @@ export const updateUserProfileRequest = (profile, userID) => {
     });
     return axios.put(`${API_URL}/users/${userID}`, profile)
       .then(response => {
-        // console.log(response);
         dispatch({
           type: types.UPDATE_PROFILE_SUCCESS,
         });

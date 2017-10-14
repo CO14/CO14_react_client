@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TextField = props => {
-  console.log(props);
   return(
       <input
         className={props.className}

@@ -2,32 +2,17 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-
 import {updateLoginForm, userLoginRequest} from '../../actions/actions.auth';
-
 import TextField from '../TextField';
 
 import './loginForm.css';
 
 class LoginForm extends Component {
-  constructor(props) {
-    super(props);
-    this.submitLogin = this.submitLogin.bind(this);
-  }
-  // onInputChange(event) {
-  //   const name = event.target.name;
-  //   const value = event.target.value;
-  //   const account = this.state.account;
-  //   account[name] = value;
-  //   return this.setState({[name]: value});
-  // }
   submitLogin(event) {
     event.preventDefault();
-    this.props.userLoginRequest(this.state.account)
-    .then( res => {
-      this.setState({redirectToProfile: true})
-    });
-  };
+    const {email, password} = this.props;
+    this.props.userLoginRequest({email, password})
+  }
 
   render() {
     if (this.props.redirectToProfile) {
@@ -36,15 +21,14 @@ class LoginForm extends Component {
       );
     };
     return (
-      <form className="form-style" onSubmit={this.submitLogin}>
-        {console.log(this.props)}
+      <form className="form-style" onSubmit={this.submitLogin.bind(this)}>
         <TextField
           className="input"
           type="text"
           name="email"
           placeholder="Email"
           value={this.props.email}
-          onChange={value => this.props.updateLoginForm({property: 'email', value})}
+          onChange={event => this.props.updateLoginForm({property: 'email', value: event.target.value})}
         />
         <TextField
           className="input"
@@ -52,7 +36,7 @@ class LoginForm extends Component {
           name="password"
           placeholder="Password"
           value={this.props.password}
-          onChange={value => this.props.updateLoginForm({property: 'password', value})}
+          onChange={event => this.props.updateLoginForm({property: 'password', value: event.target.value})}
         />
         <button type="submit" className="button">Login</button>
       </form>
