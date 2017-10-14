@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-
 import {updateLoginForm, userLoginRequest} from '../../actions/actions.auth';
-
 import TextField from '../TextField';
 
 import './loginForm.css';
@@ -14,18 +12,12 @@ class LoginForm extends Component {
     super(props);
     this.submitLogin = this.submitLogin.bind(this);
   }
-  // onInputChange(event) {
-  //   const name = event.target.name;
-  //   const value = event.target.value;
-  //   const account = this.state.account;
-  //   account[name] = value;
-  //   return this.setState({[name]: value});
-  // }
+
   submitLogin(event) {
     event.preventDefault();
     const {email, password} = this.props;
     this.props.userLoginRequest({email, password})
-  };
+  }
 
   render() {
     if (this.props.redirectToProfile) {
@@ -35,7 +27,6 @@ class LoginForm extends Component {
     };
     return (
       <form className="form-style" onSubmit={this.submitLogin}>
-        {console.log(this.props)}
         <TextField
           className="input"
           type="text"

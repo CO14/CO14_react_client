@@ -2,40 +2,26 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-
-import {userSignupRequest} from '../../actions/actions.auth';
+import {userSignupRequest, updateLoginForm} from '../../actions/actions.auth';
 import {addNewGoal} from '../../actions/actions.account';
 import TextField from '../TextField';
 
 class SignupForm extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      redirectToProfile: false,
-      account: {
-        first_name: '',
-        last_name: '',
-        email: '',
-        password: ''
-      }
-    }
-    this.onInputChange = this.onInputChange.bind(this);
     this.submitSignup = this.submitSignup.bind(this);
-  }
-
-  onInputChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-    const account = this.state.account;
-    account[name] = value;
-    return this.setState({[name]: value});
   }
 
   submitSignup(event) {
     event.preventDefault();
-    this.props.userSignupRequest(this.state.account)
-    .then(() => {
+    const {first_name, last_name, email, password} = this.props;
+    const account = {
+      first_name,
+      last_name,
+      email,
+      password
+    };
+    this.props.userSignupRequest(account).then(() => {
       const initialGoal = {
         account_rating: 0,
         account_image_url: "",
@@ -46,18 +32,12 @@ class SignupForm extends Component {
         peak_id: 9
       };
       this.props.addNewGoal(localStorage.UserID, initialGoal)
-      .then(() => {
-        this.setState({redirectToProfile: true});
-      })
-    })
-    .catch(error => console.log(error));
+    }).catch(error => console.log(error));
   }
 
   render() {
     if (this.state.redirectToProfile) {
-      return (
-        <Redirect push to={`/profile/`} />
-      );
+      return (<Redirect push to={`/profile/`}/>);
     }
 
     return (
@@ -67,32 +47,32 @@ class SignupForm extends Component {
           type="text"
           name="first_name"
           placeholder="First Name"
-          value={this.state.account.first_name}
-          onChange={this.onInputChange}
+          value={this.props.first_name}
+          onChange={event => this.props.updateLoginForm({property: 'first_name', value: event.target.value})}
         />
         <TextField
           className="input"
           type="text"
           name="last_name"
           placeholder="Last Name"
-          value={this.state.account.last_name}
-          onChange={this.onInputChange}
+          value={this.props.last_name}
+          onChange={event => this.props.updateLoginForm({property: 'last_name', value: event.target.value})}
         />
         <TextField
           className="input"
           type="text"
           name="email"
           placeholder="Email"
-          value={this.state.account.email}
-          onChange={this.onInputChange}
+          value={this.props.email}
+          onChange={event => this.props.updateLoginForm({property: 'email', value: event.target.value})}
         />
         <TextField
           className="input"
           type="password"
           name="password"
           placeholder="Password"
-          value={this.state.account.password}
-          onChange={this.onInputChange}
+          value={this.props.password}
+          onChange={event => this.props.updateLoginForm({property: 'password', value: event.target.value})}
         />
         <button type="submit" className="button">Sign up</button>
       </form>
@@ -100,8 +80,17 @@ class SignupForm extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({userSignupRequest, addNewGoal}, dispatch);
-}
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    userSignupRequest,
+    addNewGoal,
+    updateLoginForm
+  }, dispatch);
+};
 
-export default connect(null, mapDispatchToProps)(SignupForm);
+const mapStateToProps = (state) => {
+  const {first_name, last_name, email, password, redirectToProfile} = state.auth;
+  return {first_name, last_name, email, password, redirectToProfile};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);
