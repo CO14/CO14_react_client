@@ -23,10 +23,8 @@ class LoginForm extends Component {
   // }
   submitLogin(event) {
     event.preventDefault();
-    this.props.userLoginRequest(this.state.account)
-    .then( res => {
-      this.setState({redirectToProfile: true})
-    });
+    const {email, password} = this.props;
+    this.props.userLoginRequest({email, password})
   };
 
   render() {
@@ -44,7 +42,7 @@ class LoginForm extends Component {
           name="email"
           placeholder="Email"
           value={this.props.email}
-          onChange={value => this.props.updateLoginForm({property: 'email', value})}
+          onChange={event => this.props.updateLoginForm({property: 'email', value: event.target.value})}
         />
         <TextField
           className="input"
@@ -52,7 +50,7 @@ class LoginForm extends Component {
           name="password"
           placeholder="Password"
           value={this.props.password}
-          onChange={value => this.props.updateLoginForm({property: 'password', value})}
+          onChange={event => this.props.updateLoginForm({property: 'password', value: event.target.value})}
         />
         <button type="submit" className="button">Login</button>
       </form>
