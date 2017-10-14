@@ -36,7 +36,7 @@ class SignupForm extends Component {
   }
 
   render() {
-    if (this.state.redirectToProfile) {
+    if (this.props.redirectToProfile) {
       return (<Redirect push to={`/profile/`}/>);
     }
 

@@ -8,11 +8,6 @@ import TextField from '../TextField';
 import './loginForm.css';
 
 class LoginForm extends Component {
-  constructor(props) {
-    super(props);
-    this.submitLogin = this.submitLogin.bind(this);
-  }
-
   submitLogin(event) {
     event.preventDefault();
     const {email, password} = this.props;
@@ -26,7 +21,7 @@ class LoginForm extends Component {
       );
     };
     return (
-      <form className="form-style" onSubmit={this.submitLogin}>
+      <form className="form-style" onSubmit={this.submitLogin.bind(this)}>
         <TextField
           className="input"
           type="text"

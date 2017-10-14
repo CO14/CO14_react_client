@@ -14,28 +14,66 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.AUTH_FORM_UPDATE:
-      return { ...state, [action.payload.property]: action.payload.value };
+      return {
+        ...state,
+          [action.payload.property]: action.payload.value
+        };
 
     case types.LOGIN_REQUEST:
-      return { ...state, isFetching: true,isReceived: false, redirectToProfile: false };
+      return {
+        ...state,
+          isFetching: true,
+          isReceived: false,
+          redirectToProfile: false
+        };
 
     case types.LOGIN_SUCCESS:
-      return { ...state, isFetching: false, isReceived: true, redirectToProfile: true };
+      return {
+        ...state,
+          isFetching: false,
+          isReceived: true,
+          redirectToProfile: true
+        };
 
     case types.LOGIN_ERROR:
-      return { ...state, isFetching: false, isReceived: false, redirectToProfile: false, error: action.payload };
+      return {
+        ...state,
+          isFetching: false,
+          isReceived: false,
+          redirectToProfile: false,
+          error: action.payload
+        };
 
     case types.SIGNUP_REQUEST:
-      return { ...state, isFetching: true,isReceived: false, redirectToProfile: false };
+      return {
+        ...state,
+          isFetching: true,
+          isReceived: false,
+          redirectToProfile: false
+        };
 
     case types.SIGNUP_SUCCESS:
-      return { ...state, isFetching: false, isReceived: true, redirectToProfile: true };
+      return {
+        ...state,
+          isFetching: false,
+          isReceived: true,
+          redirectToProfile: true
+        };
 
     case types.SIGNUP_ERROR:
-      return { ...state, isFetching: false, isReceived: false, redirectToProfile: false, error: action.payload };
+      return {
+        ...state,
+          isFetching: false,
+          isReceived: false,
+          redirectToProfile: false,
+          error: action.payload
+        };
 
     case types.LOGOUT_REQUEST:
-      return { ...state, INITIAL_STATE};
+      return {
+        ...state,
+          INITIAL_STATE
+        };
 
     default:
       return state;
