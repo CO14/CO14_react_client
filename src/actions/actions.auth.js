@@ -23,7 +23,7 @@ export const userLoginRequest = (credentials) => {
     return axios.post(`${AUTH_URL}/login`, credentials)
     .then(res => {
       dispatch({type: types.LOGIN_SUCCESS});
-      setLocalStorage(res);
+      setLocalStorage(res.data);
     })
     .catch(error => {
       dispatch({type: types.LOGIN_ERROR, payload: error});

@@ -10,8 +10,9 @@ import ProfileAddNewGoal from '../ProfileAddNewGoal';
 import './profile.css';
 
 class Profile extends Component {
-  componentDidMount() {
-    this.props.fetchUserProfile(localStorage.UserID);
+  async componentDidMount() {
+    console.log(localStorage.UserID);
+    await this.props.fetchUserProfile(localStorage.UserID);
     this.props.fetchPeaks();
   }
 

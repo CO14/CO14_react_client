@@ -28,6 +28,7 @@ const Main = () => {
         <Route path="/profile/edit" component={ProfileUserEdit} />
         <Route path="/profile/" component={Profile} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route render={() => <Redirect to="/"/>}/>
       </Switch>
     </main>
   );

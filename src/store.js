@@ -4,7 +4,7 @@ import reduxThunk from 'redux-thunk'
 
 import Reducers from './reducers/index';
 
-const createStoreWithMiddleware = applyMiddleware(createLogger(), reduxThunk)(createStore)
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore)
 
 const Store = createStoreWithMiddleware(Reducers);
 

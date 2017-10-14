@@ -11,7 +11,7 @@ class LoginForm extends Component {
   submitLogin(event) {
     event.preventDefault();
     const {email, password} = this.props;
-    this.props.userLoginRequest({email, password})
+    this.props.userLoginRequest({email, password});
   }
 
   render() {
@@ -59,6 +59,5 @@ const mapStateToProps = (state) => {
     password
   };
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
