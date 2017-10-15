@@ -1,10 +1,21 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { removeUserGoal } from '../../actions/actions.account';
 
 import '../EditIncompleteGoal/editgoal.css';
 
 class EditCompleteGoal extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
+  }
+
+  async removeGoal(event) {
+    event.preventDefault();
+    const id = this.props.peak.account_peak_id;
+    const request = { id };
+    await this.props.removeUserGoal(localStorage.UserID, request);
+    this.props.history.push('/');
   }
 
   render() {
@@ -24,14 +35,10 @@ class EditCompleteGoal extends Component {
           </div>
           <div>
             <form>
-              <input className="edit-input" placeholder="Rating"/>
-              <input className="edit-input" placeholder="Image" />
-              <input className="edit-input" placeholder="Date Complete"/>
-              <textarea className="edit-textarea" placeholder="Notes" rows="5"></textarea>
-              <div className="button-wrapper">
-                <button className="remove-button">REMOVE</button>
-                <button type="submit" className="edit-goal-button">COMPLETE</button>
-              </div>
+              <p>RATING: {peak.account_rating}</p>
+              <p>COMPLETED: {peak.date_complete}</p>
+              <p>NOTES: {peak.account_notes}</p>
+              <button className="remove-button" onClick={this.removeGoal.bind(this)}>REMOVE</button>
             </form>
           </div>
         </div>
@@ -40,4 +47,8 @@ class EditCompleteGoal extends Component {
   }
 }
 
-export default EditCompleteGoal;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({removeUserGoal}, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(EditCompleteGoal);

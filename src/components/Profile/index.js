@@ -20,6 +20,7 @@ class Profile extends Component {
     if (!this.props.isReceived) {
       return <LoadingIcon />;
     };
+    console.log(this.props);
     return (
       <section className="container profile-container">
         <ProfileUserData
