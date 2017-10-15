@@ -45,4 +45,4 @@ export const updateLoginForm = ({ property, value }) => {
       value
     }
   };
-}
+};
