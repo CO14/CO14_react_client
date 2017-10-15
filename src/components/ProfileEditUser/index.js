@@ -44,7 +44,6 @@ class ProfileEditUser extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.account);
     this.props.updateUserProfileRequest(this.state.account, localStorage.UserID)
     .then(res => {
       this.setState({redirectToProfile: true});

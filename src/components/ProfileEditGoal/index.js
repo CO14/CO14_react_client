@@ -22,7 +22,6 @@ class ProfileEditGoal extends Component {
       const peak = allUserPeaks.find(peak => {
         return peak.account_peak_id === parseInt(match.params.peak_account_ID, 10);
       });
-      console.log(peak);
       const isComplete = peak.is_complete;
       return (
         <section className="container">
