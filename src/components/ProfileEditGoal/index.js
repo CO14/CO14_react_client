@@ -13,20 +13,22 @@ class ProfileEditGoal extends Component {
   componentDidMount() {
     this.props.fetchUserProfile(localStorage.UserID)
   }
-
   render() {
     if (!this.props.isReceived) {
-      return (<LoadingIcon />);
+      return <LoadingIcon />;
     } else {
       const {profile, match} = this.props;
       const allUserPeaks = profile.peak;
       const peak = allUserPeaks.find(peak => {
         return peak.account_peak_id === parseInt(match.params.peak_account_ID, 10);
       });
+      console.log(peak);
       const isComplete = peak.is_complete;
-      return(
+      return (
         <section className="container">
-          {isComplete ? <EditCompleteGoal peak={peak}/> : <EditIncompleteGoal peak={peak}/>}
+          {isComplete
+            ? <EditCompleteGoal peak={peak} history={this.props.history}/>
+            : <EditIncompleteGoal peak={peak} history={this.props.history}/>}
         </section>
       );
     }

@@ -18,7 +18,6 @@ class SignupForm extends Component {
     };
     this.props.userSignupRequest(account)
     .then(() => {
-      console.log(this.props.user.id);
       const initialGoal = {
         account_rating: 0,
         account_image_url: "",
