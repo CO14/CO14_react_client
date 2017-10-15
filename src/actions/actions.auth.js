@@ -1,5 +1,4 @@
 import axios from 'axios';
-import setLocalStorage from '../utilities/setLocalStorage';
 import * as types from './action.types';
 import { AUTH_URL } from '../utilities/API';
 
@@ -9,7 +8,6 @@ export const userSignupRequest = (userData) => {
     return axios.post(`${AUTH_URL}/signup`, userData)
     .then(response => {
       dispatch({type: types.SIGNUP_SUCCESS, payload: response.data});
-      setLocalStorage(response);
     })
     .catch(error => {
       dispatch({type: types.SIGNUP_ERROR, payload: error});
@@ -23,9 +21,7 @@ export const userLoginRequest = (credentials) => {
     dispatch({type: types.LOGIN_REQUEST});
     return axios.post(`${AUTH_URL}/login`, credentials)
     .then(response => {
-      console.log(response);
       dispatch({type: types.LOGIN_SUCCESS, payload: response.data});
-      setLocalStorage(response.data);
     })
     .catch(error => {
       dispatch({type: types.LOGIN_ERROR, payload: error});
@@ -37,7 +33,8 @@ export const userLoginRequest = (credentials) => {
 export const userLogout = () => {
   return dispatch => {
     dispatch({type: types.LOGOUT_REQUEST});
-  }
+    localStorage.clear();
+  };
 };
 
 export const updateLoginForm = ({ property, value }) => {

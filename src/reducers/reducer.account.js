@@ -69,10 +69,7 @@ export default (state = INITIAL_STATE, action) => {
         };
 
     case types.LOGOUT_REQUEST:
-      return {
-        ...state,
-          INITIAL_STATE
-        };
+      return INITIAL_STATE;
 
     default:
       return state;

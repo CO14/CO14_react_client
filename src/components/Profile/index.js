@@ -13,12 +13,15 @@ class Profile extends Component {
   componentDidMount() {
     this.props.fetchUserProfile(this.props.user.id || localStorage.UserID);
     this.props.fetchPeaks();
+    window.scrollTo(0, 0);
   }
 
   render() {
     if (!this.props.isReceived) {
       return <LoadingIcon />;
-    }
+    };
+    console.log(this.props.profile);
+
     return (
       <section className="container profile-container">
         <ProfileUserData

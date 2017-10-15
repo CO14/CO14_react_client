@@ -19,6 +19,10 @@
   color: #5F5AA2;
 }
 
+.active-link {
+  background: #000;
+}
+
 @media only screen and (min-width: 768px) {
   .nav-list-item {
     padding: 0 0.5em;
