@@ -20,7 +20,6 @@ class EditCompleteGoal extends Component {
 
   render() {
     const {peak} = this.props;
-    console.log(peak);
     return (
       <section className="edit-goal-section">
         <div className="edit-goal-header">
