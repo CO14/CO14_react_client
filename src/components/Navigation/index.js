@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { userLogout } from '../../actions/actions.auth';
@@ -9,57 +9,60 @@ import './navigation.css';
 const NavigationLoggedOut = () => {
   return (
     <ul className="nav-list">
-      <li className="nav-list-item">
-        <Link to="/peaks" className="nav-links">Peaks</Link>
-      </li>
-      <li className="nav-list-item">
-        <Link to="/about" className="nav-links">About</Link>
-      </li>
-      <li className="nav-list-item">
-        <Link to="/contact" className="nav-links">Contact</Link>
-      </li>
-      <li className="nav-list-item">
-        <Link to="/signup" className="nav-links">Signup</Link>
-      </li>
+      <NavLink to="/peaks" className="nav-links" activeClassName="active-link">
+        <li className="nav-list-item">Peaks</li>
+      </NavLink>
+
+      <NavLink to="/about" className="nav-links" activeClassName="active-link">
+        <li className="nav-list-item">About</li>
+      </NavLink>
+
+      <NavLink to="/contact" className="nav-links" activeClassName="active-link">
+        <li className="nav-list-item">Contact</li>
+      </NavLink>
+
+      <NavLink to="/signup" className="nav-links" activeClassName="active-link">
+        <li className="nav-list-item">Signup</li>
+      </NavLink>
     </ul>
   );
 };
 
-const NavigationLoggedIn = () => {
+const NavigationLoggedIn = (props) => {
   return (
     <ul className="nav-list">
-      <li className="nav-list-item">
-        <Link to="/" className="nav-links">Home</Link>
-      </li>
-      <li className="nav-list-item">
-        <Link to="/peaks" className="nav-links">Peaks</Link>
-      </li>
-      <li className="nav-list-item">
-        <Link to="/about" className="nav-links">About</Link>
-      </li>
-      <li className="nav-list-item">
-        <Link to="/contact" className="nav-links">Contact</Link>
-      </li>
-      <li className="nav-list-item">
-        <Link to="/" className="nav-links" onClick={logout}>Logout</Link>
-      </li>
+      <NavLink to="/" className="nav-links" activeClassName="active-link">
+        <li className="nav-list-item">Home</li>
+      </NavLink>
+
+      <NavLink to="/peaks" className="nav-links" activeClassName="active-link">
+        <li className="nav-list-item">Peaks</li>
+      </NavLink>
+
+      <NavLink to="/about" className="nav-links" activeClassName="active-link">
+        <li className="nav-list-item">About</li>
+      </NavLink>
+
+      <NavLink to="/contact" className="nav-links" activeClassName="active-link">
+        <li className="nav-list-item">Contact</li>
+      </NavLink>
+
+      <Link to="/" className="nav-links" onClick={() => props.userLogout()}>
+        <li className="nav-list-item">Logout</li>
+      </Link>
     </ul>
   );
 };
 
-const logout = props => {
-  localStorage.clear();
-}
-
-const Navigation = props => {
+const Navigation = (props) => {
   return(
     <nav>
-      {isLoggedIn() ? <NavigationLoggedIn /> : <NavigationLoggedOut /> }
+      {isLoggedIn() ? <NavigationLoggedIn userLogout={props.userLogout}/> : <NavigationLoggedOut /> }
     </nav>
   );
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     userLogout
   }, dispatch);

@@ -79,12 +79,10 @@ textarea {
   width: 100%;
 }
 
-
-
 .button:hover {
   outline: none;
   box-shadow: 1px 1px 1px 1px #ccc;
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 a {

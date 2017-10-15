@@ -8,7 +8,7 @@ import {updateUserProfileRequest, fetchUserProfile} from '../../actions/actions.
 import TextField from '../TextField';
 import LoadingIcon from '../LoadingIcon';
 
-class ProfileEdit extends Component {
+class ProfileEditUser extends Component {
   constructor(props) {
     super(props);
 
@@ -31,6 +31,7 @@ class ProfileEdit extends Component {
 
   componentDidMount() {
     this.props.fetchUserProfile(localStorage.UserID);
+    window.scrollTo(0, 0);
   }
 
   onInputChange(event) {
@@ -125,7 +126,7 @@ class ProfileEdit extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({updateUserProfileRequest, fetchUserProfile}, dispatch);
 }
 
@@ -136,4 +137,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileEdit);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileEditUser);

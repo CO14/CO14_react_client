@@ -7,11 +7,6 @@ import {addNewGoal} from '../../actions/actions.account';
 import TextField from '../TextField';
 
 class SignupForm extends Component {
-  constructor(props) {
-    super(props);
-    this.submitSignup = this.submitSignup.bind(this);
-  }
-
   submitSignup(event) {
     event.preventDefault();
     const {first_name, last_name, email, password} = this.props;
@@ -21,7 +16,9 @@ class SignupForm extends Component {
       email,
       password
     };
-    this.props.userSignupRequest(account).then(() => {
+    this.props.userSignupRequest(account)
+    .then(() => {
+      console.log(this.props.user.id);
       const initialGoal = {
         account_rating: 0,
         account_image_url: "",
@@ -31,17 +28,16 @@ class SignupForm extends Component {
         account_id: parseInt(localStorage.UserID, 10),
         peak_id: 9
       };
-      this.props.addNewGoal(localStorage.UserID, initialGoal)
-    }).catch(error => console.log(error));
+      this.props.addNewGoal(localStorage.UserID, initialGoal);
+    });
   }
 
   render() {
     if (this.props.redirectToProfile) {
       return (<Redirect push to={`/profile/`}/>);
     }
-
     return (
-      <form className="" onSubmit={this.submitSignup}>
+      <form className="" onSubmit={this.submitSignup.bind(this)}>
         <TextField
           className="input"
           type="text"
@@ -89,8 +85,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => {
-  const {first_name, last_name, email, password, redirectToProfile} = state.auth;
-  return {first_name, last_name, email, password, redirectToProfile};
+  const {first_name, last_name, email, password, redirectToProfile, user} = state.auth;
+  return {first_name, last_name, email, password, redirectToProfile, user};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

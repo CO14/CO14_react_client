@@ -9,12 +9,10 @@ export const fetchUserProfile = (userID) => {
     });
     return axios.get(`${API_URL}/users/${userID}`)
     .then(response => {
-      setTimeout(() => {
-        dispatch({
-          type: types.ACCOUNT_PROFILE_RECEIVED,
-          payload: response.data[0]
-        });
-      }, 400)
+      dispatch({
+        type: types.ACCOUNT_PROFILE_RECEIVED,
+        payload: response.data[0]
+      });
     }).catch(error => {
       dispatch({
         type: types.ACCOUNT_PROFILE_ERROR,
