@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   letter-spacing: 0.3em;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .nav-list-item {
@@ -14,13 +14,13 @@
   text-transform: uppercase;
 }
 
-.nav-links, .nav-links:visited {
+.nav-links,
+.nav-links:visited {
   text-decoration: none;
-  color: #5F5AA2;
+  color: #5f5aa2;
 }
 
 .active-link {
-
 }
 
 @media only screen and (min-width: 768px) {

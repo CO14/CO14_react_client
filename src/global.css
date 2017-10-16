@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Source+Code+Pro|Mukta+Mahee');
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700|Source+Code+Pro|Mukta+Mahee");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 body {
   margin: 0 auto;
   padding: 0;
-  font-family: 'Mukta Mahee', sans-serif;
+  font-family: "Mukta Mahee", sans-serif;
 }
 
 textarea {
@@ -47,7 +47,7 @@ textarea {
   display: inline-block;
   text-align: center;
   background: transparent;
-  border: 0.1em solid #5F5AA2;
+  border: 0.1em solid #5f5aa2;
   border-radius: 100px;
   padding: 1em 0.5em;
   margin: 0.5em 0;
@@ -57,7 +57,8 @@ textarea {
   max-height: 3.5em;
 }
 
-.input:focus, .button:focus {
+.input:focus,
+.button:focus {
   outline: none;
   box-shadow: 1px 1px 1px 1px #ccc;
 }
@@ -66,10 +67,10 @@ textarea {
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  background: linear-gradient(90deg, #5F5AA2, #5F5AA2);
+  background: linear-gradient(90deg, #5f5aa2, #5f5aa2);
   border: 0.13em solid #343539;
   border-radius: 100px;
-  color: #FFF;
+  color: #fff;
   padding: 1em 0.5em;
   margin: 0.5em 0 0 0;
   text-transform: uppercase;
@@ -86,7 +87,7 @@ textarea {
 }
 
 a {
-  color: #5F5AA2;
+  color: #5f5aa2;
 }
 
 .center-sm {
@@ -115,5 +116,4 @@ a {
   .container {
     width: 90%;
   }
-
 }

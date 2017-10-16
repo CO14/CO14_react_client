@@ -2,23 +2,24 @@
   cursor: pointer;
   border-style: none;
   background: none;
-  border: 1px solid #5F5AA2;
+  border: 1px solid #5f5aa2;
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 1.5em 0;
   width: 5em;
-  color: #FFF;
-  background: linear-gradient(90deg, #5F5AA2, #343539);
+  color: #fff;
+  background: linear-gradient(90deg, #5f5aa2, #343539);
 }
 
 .add-button:hover {
-  background: #FFF;
+  background: #fff;
   color: #343539;
   opacity: 0.8;
 }
 
-.add-button:focus, select:focus {
+.add-button:focus,
+select:focus {
   outline: none;
 }
 
@@ -31,10 +32,10 @@ select {
   -webkit-border-radius: 0px;
   background: none;
   border-style: none;
-  border: 1px solid #5F5AA2;
+  border: 1px solid #5f5aa2;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  color: #5F5AA2;
+  color: #5f5aa2;
   padding: 1.5em 0;
   padding-left: 1.5em;
   width: 20em;

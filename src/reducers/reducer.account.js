@@ -1,4 +1,4 @@
-import * as types from '../actions/action.types';
+import * as types from "../actions/action.types";
 
 const INITIAL_STATE = {
   isFetching: false,
@@ -11,7 +11,7 @@ const INITIAL_STATE = {
   account_notes: ""
 };
 
-export default(state = INITIAL_STATE, action) => {
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.ACCOUNT_PROFILE_REQUEST:
       return {
@@ -157,8 +157,8 @@ export default(state = INITIAL_STATE, action) => {
     case types.GOAL_FORM_UPDATE:
       return {
         ...state,
-          [action.payload.property]: action.payload.value
-        };
+        [action.payload.property]: action.payload.value
+      };
 
     case types.LOGOUT_REQUEST:
       return INITIAL_STATE;

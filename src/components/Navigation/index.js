@@ -1,10 +1,10 @@
-import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { userLogout } from '../../actions/actions.auth';
-import isLoggedIn from '../../utilities/isLoggedIn';
-import './navigation.css';
+import React from "react";
+import {NavLink, Link} from "react-router-dom";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {userLogout} from "../../actions/actions.auth";
+import isLoggedIn from "../../utilities/isLoggedIn";
+import "./navigation.css";
 
 const NavigationLoggedOut = () => {
   return (
@@ -28,7 +28,7 @@ const NavigationLoggedOut = () => {
   );
 };
 
-const NavigationLoggedIn = (props) => {
+const NavigationLoggedIn = props => {
   return (
     <ul className="nav-list">
       <NavLink to="/" className="nav-links" activeClassName="active-link">
@@ -54,15 +54,17 @@ const NavigationLoggedIn = (props) => {
   );
 };
 
-const Navigation = (props) => {
-  return(
+const Navigation = props => {
+  return (
     <nav>
-      {isLoggedIn() ? <NavigationLoggedIn userLogout={props.userLogout}/> : <NavigationLoggedOut /> }
+      {isLoggedIn()
+        ? (<NavigationLoggedIn userLogout={props.userLogout}/>)
+        : (<NavigationLoggedOut/>)}
     </nav>
   );
-}
+};
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     userLogout
   }, dispatch);
