@@ -1,12 +1,15 @@
-import React, {Component} from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-import {updateUserProfileRequest, fetchUserProfile} from '../../actions/actions.account';
+import {
+  updateUserProfileRequest,
+  fetchUserProfile
+} from "../../actions/actions.account";
 
-import TextField from '../TextField';
-import LoadingIcon from '../LoadingIcon';
+import TextField from "../TextField";
+import LoadingIcon from "../LoadingIcon";
 
 class ProfileEditUser extends Component {
   constructor(props) {
@@ -16,15 +19,15 @@ class ProfileEditUser extends Component {
       redirectToProfile: false,
       account: {
         id: parseInt(localStorage.UserID, 10),
-        first_name: '',
-        last_name: '',
-        image: '',
-        password: '',
-        facebook_url: '',
-        instagram_url: '',
-        twitter_url: ''
+        first_name: "",
+        last_name: "",
+        image: "",
+        password: "",
+        facebook_url: "",
+        instagram_url: "",
+        twitter_url: ""
       }
-    }
+    };
     this.onInputChange = this.onInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -39,25 +42,26 @@ class ProfileEditUser extends Component {
     const value = event.target.value;
     const account = this.state.account;
     account[name] = value;
-    return this.setState({[name]: value});
+    return this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.updateUserProfileRequest(this.state.account, localStorage.UserID)
-    .then(res => {
-      this.setState({redirectToProfile: true});
-    });
+    this.props
+      .updateUserProfileRequest(this.state.account, localStorage.UserID)
+      .then(res => {
+        this.setState({ redirectToProfile: true });
+      });
   }
 
   render() {
     if (this.state.redirectToProfile) {
-      return <Redirect push to={`/profile/`} />
+      return <Redirect push to={`/profile/`} />;
     }
     if (!this.props.isReceived) {
-      return (<LoadingIcon />);
+      return <LoadingIcon />;
     } else {
-      return(
+      return (
         <section className="container">
           <h2>EDIT PROFILE</h2>
           <form className="edit-profile-form" onSubmit={this.handleSubmit}>
@@ -117,7 +121,9 @@ class ProfileEditUser extends Component {
               value={this.state.account.twitter_url}
               onChange={this.onInputChange}
             />
-            <button type="submit" className="button">Update Profile</button>
+            <button type="submit" className="button">
+              Update Profile
+            </button>
           </form>
         </section>
       );
@@ -125,15 +131,18 @@ class ProfileEditUser extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({updateUserProfileRequest, fetchUserProfile}, dispatch);
-}
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    { updateUserProfileRequest, fetchUserProfile },
+    dispatch
+  );
+};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isReceived: state.account.isReceived,
     profile: state.account.profile
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileEditUser);

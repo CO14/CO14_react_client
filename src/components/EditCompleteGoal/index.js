@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { removeUserGoal } from '../../actions/actions.account';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { removeUserGoal } from "../../actions/actions.account";
 
-import '../EditIncompleteGoal/editgoal.css';
+import "../EditIncompleteGoal/editgoal.css";
 
 class EditCompleteGoal extends Component {
   componentDidMount() {
@@ -15,29 +15,51 @@ class EditCompleteGoal extends Component {
     const id = this.props.peak.account_peak_id;
     const request = { id };
     await this.props.removeUserGoal(localStorage.UserID, request);
-    this.props.history.push('/');
+    this.props.history.push("/profile");
   }
 
   render() {
-    const {peak} = this.props;
+    const { peak } = this.props;
     return (
       <section className="edit-goal-section">
         <div className="edit-goal-header">
-          <div><span className="edit-goal-title">PEAK: </span>{peak.peak_name}</div>
-          <div><span className="edit-goal-title">RANGE: </span>{peak.range_name}</div>
-          <div><span className="edit-goal-title">ELEVATION: </span>{peak.elevation}</div>
-          <div><span className="edit-goal-title">DIFFICULTY: </span>{peak.difficulty}</div>
+          <div>
+            <span className="edit-goal-title">PEAK: </span>
+            {peak.peak_name}
+          </div>
+          <div>
+            <span className="edit-goal-title">RANGE: </span>
+            {peak.range_name}
+          </div>
+          <div>
+            <span className="edit-goal-title">ELEVATION: </span>
+            {peak.elevation}
+          </div>
+          <div>
+            <span className="edit-goal-title">DIFFICULTY: </span>
+            {peak.difficulty}
+          </div>
         </div>
         <div className="edit-goal-wrapper">
           <div>
-            <img className="edit-goal-image" src={peak.peak_image_url} alt={peak.name}/><br/>
+            <img
+              className="edit-goal-image"
+              src={peak.peak_image_url}
+              alt={peak.name}
+            />
+            <br />
           </div>
           <div>
             <form>
               <p>RATING: {peak.account_rating}</p>
               <p>COMPLETED: {peak.date_complete}</p>
               <p>NOTES: {peak.account_notes}</p>
-              <button className="remove-button" onClick={this.removeGoal.bind(this)}>REMOVE</button>
+              <button
+                className="remove-button"
+                onClick={this.removeGoal.bind(this)}
+              >
+                REMOVE
+              </button>
             </form>
           </div>
         </div>
@@ -46,8 +68,8 @@ class EditCompleteGoal extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({removeUserGoal}, dispatch);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ removeUserGoal }, dispatch);
 };
 
 export default connect(null, mapDispatchToProps)(EditCompleteGoal);

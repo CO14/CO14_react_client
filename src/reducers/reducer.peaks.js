@@ -1,4 +1,4 @@
-import * as types from '../actions/action.types';
+import * as types from "../actions/action.types";
 
 const INITIAL_STATE = {
   isFetching: false,
@@ -12,25 +12,25 @@ export default (state = INITIAL_STATE, action) => {
     case types.PEAK_REQUEST:
       return {
         ...state,
-          isFetching: true,
-          isReceived: false
-        };
+        isFetching: true,
+        isReceived: false
+      };
 
     case types.PEAK_RECEIVED:
       return {
         ...state,
-          isFetching: false,
-          isReceived: true,
-          peaks: action.payload
-        };
+        isFetching: false,
+        isReceived: true,
+        peaks: action.payload
+      };
 
     case types.PEAK_ERROR:
       return {
         ...state,
-          isFetching: false,
-          isReceived: false,
-          error: action.payload
-        };
+        isFetching: false,
+        isReceived: false,
+        error: action.payload
+      };
 
     case types.LOGOUT_REQUEST:
       return INITIAL_STATE;

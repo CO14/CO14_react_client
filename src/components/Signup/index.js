@@ -1,23 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import SignupForm from '../SignupForm';
+import SignupForm from "../SignupForm";
 
-import './signup.css';
+import "./signup.css";
 
 const Signup = props => {
-  return(
+  return (
     <section className="container">
       <h1>Create A New Account</h1>
       <div className="signup-wrapper">
-        <div>
-          
-        </div>
+        <div />
         <div>
           <SignupForm />
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Signup;

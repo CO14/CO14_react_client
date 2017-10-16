@@ -1,13 +1,11 @@
-import React from 'react';
-import Splash from '../Splash';
-import HomeServices from '../HomeServices';
-import HomeBanner from '../HomeBanner';
-import HomeDetails from '../HomeDetails';
-
-import './home.css';
+import React from "react";
+import Splash from "../Splash";
+import HomeServices from "../HomeServices";
+import HomeBanner from "../HomeBanner";
+import HomeDetails from "../HomeDetails";
 
 const Home = () => {
-  return(
+  return (
     <section>
       <Splash />
       <HomeServices />
@@ -15,6 +13,6 @@ const Home = () => {
       <HomeDetails />
     </section>
   );
-}
+};
 
 export default Home;

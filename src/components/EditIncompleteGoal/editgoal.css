@@ -2,7 +2,7 @@
   display: inline-block;
   text-align: left;
   background: transparent;
-  border: 0.1em solid #5F5AA2;
+  border: 0.1em solid #5f5aa2;
   padding: 1em 0.5em;
   margin: 0.5em 0;
   width: 100%;
@@ -18,13 +18,14 @@
   display: inline-block;
   text-align: left;
   background: transparent;
-  border: 0.1em solid #5F5AA2;
+  border: 0.1em solid #5f5aa2;
   padding: 1em 0.5em;
   margin: 0.5em 0 -0.2em 0;
   width: 100%;
 }
 
-.edit-input:focus, .edit-textarea:focus {
+.edit-input:focus,
+.edit-textarea:focus {
   outline: none;
   box-shadow: 1px 1px 1px 1px #ccc;
 }
@@ -33,9 +34,9 @@
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  background: #5F5AA2;
+  background: #5f5aa2;
   border: 0.13em solid #343539;
-  color: #FFF;
+  color: #fff;
   padding: 1em 0.5em;
   margin: 0 0 0.5em 0;
   text-transform: uppercase;
@@ -51,16 +52,16 @@
 }
 
 .edit-goal-button:hover {
-  background: linear-gradient(90deg, #5F5AA2, #343539);
+  background: linear-gradient(90deg, #5f5aa2, #343539);
 }
 
 .remove-button {
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  background: #9C2B35;
+  background: #9c2b35;
   border: 0.13em solid #343539;
-  color: #FFF;
+  color: #fff;
   padding: 1em 0.5em;
   margin: 0 0 0.5em 0;
   text-transform: uppercase;
@@ -76,13 +77,13 @@
 }
 
 .remove-button:hover {
-  background: linear-gradient(90deg, #9C2B35,  #343539);
+  background: linear-gradient(90deg, #9c2b35, #343539);
 }
 
 .edit-goal-image {
   width: 100%;
   box-shadow: 1px 1px 1px 1px #ccc;
-  border: 1px solid #5F5AA2;
+  border: 1px solid #5f5aa2;
 }
 
 .edit-goal-wrapper {
@@ -100,27 +101,28 @@
   grid-template-columns: 1fr;
   text-transform: uppercase;
   font-weight: normal;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   letter-spacing: 0.1em;
   text-align: center;
   margin: 0 0 1em 0;
 }
 
-.edit-goal-header>div {
+.edit-goal-header > div {
   text-align: center;
   margin: 0.7em 0;
 }
 
 .edit-goal-title {
   font-weight: 700;
-  color: #5F5AA2;
+  color: #5f5aa2;
 }
 
 .edit-goal-section {
   margin-bottom: 1em;
 }
 
-.react-datepicker-wrapper, .react-datepicker__input-container {
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
   width: 100%;
   margin: 0;
   padding: 0;

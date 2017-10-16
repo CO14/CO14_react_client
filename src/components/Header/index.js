@@ -1,17 +1,17 @@
-import React from 'react';
-import Logo from '../Logo';
-import Navigation from '../Navigation';
-import LoginForm from '../LoginForm';
-import isLoggedIn from '../../utilities/isLoggedIn';
+import React from "react";
+import Logo from "../Logo";
+import Navigation from "../Navigation";
+import LoginForm from "../LoginForm";
+import isLoggedIn from "../../utilities/isLoggedIn";
 
-import './header.css';
+import "./header.css";
 
 const HeaderHome = () => {
   return (
     <div className="header-layout">
       <Logo />
       <div className="login-nav">
-        <Navigation/>
+        <Navigation />
         <LoginForm />
       </div>
     </div>
@@ -23,18 +23,18 @@ const HeaderProfile = () => {
     <div className="header-layout">
       <Logo />
       <div className="login-nav">
-        <Navigation/>
+        <Navigation />
       </div>
     </div>
   );
 };
 
 const Header = () => {
-  return(
+  return (
     <header className="container">
-      {isLoggedIn() ? <HeaderProfile/> : <HeaderHome />}
+      {isLoggedIn() ? <HeaderProfile /> : <HeaderHome />}
     </header>
   );
-}
+};
 
 export default Header;
