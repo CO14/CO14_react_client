@@ -2,8 +2,7 @@ import React from 'react';
 
 import './peak.css';
 
-const PeakListItem = (props) => {
-  const { peak } = props;
+const PeakListItem = ({ peak }) => {
   console.log(peak);
   return(
     <section className="peak-wrapper">
@@ -12,19 +11,19 @@ const PeakListItem = (props) => {
       </div>
       <div>
         <div>
-          <span className="edit-goal-title">PEAK: </span>
+          <span className="peak-title">PEAK: </span>
           {peak.peak_name}
         </div>
         <div>
-          <span className="edit-goal-title">RANGE: </span>
+          <span className="peak-title">RANGE: </span>
           {peak.range_name}
         </div>
         <div>
-          <span className="edit-goal-title">ELEVATION: </span>
+          <span className="peak-title">ELEVATION: </span>
           {peak.elevation}
         </div>
         <div>
-          <span className="edit-goal-title">DIFFICULTY: </span>
+          <span className="peak-title">DIFFICULTY: </span>
           {peak.difficulty}
         </div>
       </div>

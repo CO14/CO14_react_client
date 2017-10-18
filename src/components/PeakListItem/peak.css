@@ -10,6 +10,11 @@
   margin: 1em 0;
 }
 
+.peak-title {
+  font-weight: 700;
+  color: #5f5aa2;
+}
+
 @media only screen and (min-width: 768px) {
   .peak-wrapper {
     grid-template-columns: 1fr 1fr;
