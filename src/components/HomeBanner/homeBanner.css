@@ -1,6 +1,6 @@
 .banner-image {
   margin: 2em 0;
-  max-width: 100%;
+  width: 100%;
 }
 
 @media only screen and (min-width: 992px) {

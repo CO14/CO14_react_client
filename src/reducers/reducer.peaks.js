@@ -32,9 +32,6 @@ export default (state = INITIAL_STATE, action) => {
         error: action.payload
       };
 
-    case types.LOGOUT_REQUEST:
-      return INITIAL_STATE;
-
     default:
       return state;
   }
