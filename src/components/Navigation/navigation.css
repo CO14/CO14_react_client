@@ -1,39 +1,39 @@
 .nav-list {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  letter-spacing: 0.3em;
-  font-family: "Raleway", sans-serif;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0.3em;
+    font-family: "Raleway", sans-serif;
 }
 
 .nav-list-item {
-  margin: 1em 0;
-  text-align: center;
-  font-size: 1.4em;
-  text-transform: uppercase;
+    margin: 1em 0;
+    text-align: center;
+    font-size: 1.4em;
+    text-transform: uppercase;
 }
 
 .nav-links,
 .nav-links:visited {
-  text-decoration: none;
-  color: #5f5aa2;
+    text-decoration: none;
+    color: #5f5aa2;
 }
 
 .active-link {
 }
 
 @media only screen and (min-width: 768px) {
-  .nav-list-item {
-    padding: 0 0.5em;
-    margin: 0;
-  }
+    .nav-list-item {
+        padding: 0 0.5em;
+        margin: 0;
+    }
 
-  .nav-list-item:last-child {
-    padding: 0 0.5em 0 0.5em;
-  }
+    .nav-list-item:last-child {
+        padding: 0 0.5em 0 0.5em;
+    }
 
-  .nav-list {
-    display: flex;
-  }
+    .nav-list {
+        display: flex;
+    }
 }

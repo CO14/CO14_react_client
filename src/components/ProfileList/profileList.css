@@ -1,42 +1,42 @@
 .goal-thumbnail {
-  object-fit: cover;
-  height: 50px;
-  width: 100%;
-  border: 1px solid #5f5aa2;
-  box-shadow: 1px 1px 1px 1px #ccc;
+    object-fit: cover;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #5f5aa2;
+    box-shadow: 1px 1px 1px 1px #ccc;
 }
 
 td,
 th {
-  vertical-align: middle;
-  letter-spacing: 1px;
-  border-top: 1px solid black;
-  padding: 0.5em 0.1em;
+    vertical-align: middle;
+    letter-spacing: 1px;
+    border-top: 1px solid black;
+    padding: 0.5em 0.1em;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .edit-button {
-  cursor: pointer;
-  border: 1px solid #5f5aa2;
-  color: #5f5aa2;
-  padding: 1em;
-  background: transparent;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+    cursor: pointer;
+    border: 1px solid #5f5aa2;
+    color: #5f5aa2;
+    padding: 1em;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .edit-button:hover {
-  background: #5f5aa2;
-  color: #fbf5f3;
+    background: #5f5aa2;
+    color: #fbf5f3;
 }
 
 @media only screen and (min-width: 768px) {
-  .goal-thumbnail {
-    height: 5em;
-  }
+    .goal-thumbnail {
+        height: 5em;
+    }
 }

@@ -7,34 +7,34 @@ import isLoggedIn from "../../utilities/isLoggedIn";
 import "./header.css";
 
 const HeaderHome = () => {
-  return (
-    <div className="header-layout">
-      <Logo />
-      <div className="login-nav">
-        <Navigation />
-        <LoginForm />
-      </div>
-    </div>
-  );
+    return (
+        <div className="header-layout">
+            <Logo />
+            <div className="login-nav">
+                <Navigation />
+                <LoginForm />
+            </div>
+        </div>
+    );
 };
 
 const HeaderProfile = () => {
-  return (
-    <div className="header-layout">
-      <Logo />
-      <div className="login-nav">
-        <Navigation />
-      </div>
-    </div>
-  );
+    return (
+        <div className="header-layout">
+            <Logo />
+            <div className="login-nav">
+                <Navigation />
+            </div>
+        </div>
+    );
 };
 
 const Header = () => {
-  return (
-    <header className="container">
-      {isLoggedIn() ? <HeaderProfile /> : <HeaderHome />}
-    </header>
-  );
+    return (
+        <header className="container">
+            {isLoggedIn() ? <HeaderProfile /> : <HeaderHome />}
+        </header>
+    );
 };
 
 export default Header;

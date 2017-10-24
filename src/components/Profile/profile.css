@@ -1,83 +1,83 @@
 .profile-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .list-title {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .profile-container {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .profile-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .social-icons {
-  margin-left: 1em;
+    margin-left: 1em;
 }
 
 .social-icon-group {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .user-name {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 400;
-  font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    font-family: "Raleway", sans-serif;
 }
 
 .user-profile {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
 }
 
 .edit-profile-form {
-  margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 
 @media only screen and (min-width: 768px) {
-  .inline,
-  .inline-profile {
-    display: flex;
-    justify-content: space-between;
-  }
+    .inline,
+    .inline-profile {
+        display: flex;
+        justify-content: space-between;
+    }
 
-  .inline {
-    align-items: center;
-  }
+    .inline {
+        align-items: center;
+    }
 
-  .inline-profile {
-    align-items: flex-end;
-  }
+    .inline-profile {
+        align-items: flex-end;
+    }
 
-  .social-icon-group {
-    margin-bottom: inherit;
-  }
+    .social-icon-group {
+        margin-bottom: inherit;
+    }
 
-  .profile-wrapper {
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1.5em;
-  }
+    .profile-wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1.5em;
+    }
 
-  .user-profile {
-    display: inherit;
-  }
+    .user-profile {
+        display: inherit;
+    }
 
-  .profile-image {
-    margin-right: 2em;
-  }
+    .profile-image {
+        margin-right: 2em;
+    }
 }

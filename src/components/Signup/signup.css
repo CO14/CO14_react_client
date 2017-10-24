@@ -1,11 +1,11 @@
 .signup-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 1em 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1em 0;
 }
 
 @media only screen and (min-width: 768px) {
-  .signup-wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
+    .signup-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
 }
