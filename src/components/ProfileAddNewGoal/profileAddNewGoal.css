@@ -1,53 +1,53 @@
 .add-button {
-  cursor: pointer;
-  border-style: none;
-  background: none;
-  border: 1px solid #5f5aa2;
-  border-left: none;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding: 1.5em 0;
-  width: 5em;
-  color: #fff;
-  background: linear-gradient(90deg, #5f5aa2, #343539);
+    cursor: pointer;
+    border-style: none;
+    background: none;
+    border: 1px solid #5f5aa2;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 1.5em 0;
+    width: 5em;
+    color: #fff;
+    background: linear-gradient(90deg, #5f5aa2, #343539);
 }
 
 .add-button:hover {
-  background: #fff;
-  color: #343539;
-  opacity: 0.8;
+    background: #fff;
+    color: #343539;
+    opacity: 0.8;
 }
 
 .add-button:focus,
 select:focus {
-  outline: none;
+    outline: none;
 }
 
 select {
-  display: inline-block;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -webkit-border-radius: 0px;
-  background: none;
-  border-style: none;
-  border: 1px solid #5f5aa2;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  color: #5f5aa2;
-  padding: 1.5em 0;
-  padding-left: 1.5em;
-  width: 20em;
-  text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0px;
+    background: none;
+    border-style: none;
+    border: 1px solid #5f5aa2;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #5f5aa2;
+    padding: 1.5em 0;
+    padding-left: 1.5em;
+    width: 20em;
+    text-transform: uppercase;
 }
 
 .add-new-form {
-  margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 
 @media only screen and (min-width: 768px) {
-  .add-new-form {
-    margin-bottom: 0;
-  }
+    .add-new-form {
+        margin-bottom: 0;
+    }
 }

@@ -1,21 +1,21 @@
 .services-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
 }
 
 .service-header {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .icon-size {
-  max-width: 100px;
+    max-width: 100px;
 }
 
 @media only screen and (min-width: 992px) {
-  .services-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 1.25em;
-  }
+    .services-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1.25em;
+    }
 }

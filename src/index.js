@@ -13,11 +13,11 @@ import App from "./components/App";
 import registerServiceWorker from "./registerServiceWorker";
 
 const CO14 = (
-  <Provider store={Store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
+    <Provider store={Store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
 );
 
 setAuthorizationToken(localStorage.Token);

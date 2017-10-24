@@ -5,9 +5,9 @@ import auth from "./reducer.auth";
 import peaks from "./reducer.peaks";
 
 const Reducers = combineReducers({
-  account,
-  auth,
-  peaks
+    account,
+    auth,
+    peaks
 });
 
 export default Reducers;

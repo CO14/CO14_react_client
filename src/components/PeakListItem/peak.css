@@ -1,18 +1,23 @@
 .peak-image {
-  width: 100%;
-  box-shadow: 1px 1px 1px 1px #ccc;
-  border: 1px solid #5f5aa2;
+    width: 100%;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    border: 1px solid #5f5aa2;
 }
 
 .peak-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 1em 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1em 0;
+}
+
+.peak-title {
+    font-weight: 700;
+    color: #5f5aa2;
 }
 
 @media only screen and (min-width: 768px) {
-  .peak-wrapper {
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1em;
-  }
+    .peak-wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1em;
+    }
 }
