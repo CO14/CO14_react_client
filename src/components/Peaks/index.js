@@ -6,6 +6,7 @@ import PeakListItem from "../PeakListItem";
 
 class Peaks extends Component {
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.fetchPeaks();
     }
 
