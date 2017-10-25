@@ -12,10 +12,8 @@ export const AUTH_URL =
 export const API = {
     serverWakeUp: () => {
         Axios.get(`${API_URL}/users`)
-            .then(() =>
-                console.log(
-                    "This 'GET' request is used to wake up the Heroku server"
-                )
+            .then(
+                () => "This 'GET' request is used to wake up the Heroku server"
             )
             .catch(error => console.error(error));
     }
