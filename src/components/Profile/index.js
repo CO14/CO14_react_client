@@ -26,7 +26,6 @@ class Profile extends Component {
         }
         return (
             <section className="container profile-container">
-                {console.log(this.props)}
                 <ProfileUserData profile={this.props.profile} />
                 <div className="profile-wrapper">
                     <div className="align-center">

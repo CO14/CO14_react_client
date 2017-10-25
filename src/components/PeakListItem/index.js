@@ -3,7 +3,6 @@ import React from "react";
 import "./peak.css";
 
 const PeakListItem = ({ peak }) => {
-    // console.log(peak);
     return (
         <section className="peak-wrapper">
             <div>
