@@ -1,11 +1,13 @@
 import axios from "axios";
 import * as types from "./action.types";
 import { AUTH_URL } from "../utilities/API";
+import Validation from "../utilities/validation";
 
 export const userSignupRequest = userData => {
     return dispatch => {
-        dispatch({ type: types.SIGNUP_REQUEST });
-        return axios
+        if (Validation.isUserValid(userData)) {
+            dispatch({ type: types.SIGNUP_REQUEST });
+            return axios
             .post(`${AUTH_URL}/signup`, userData)
             .then(response => {
                 dispatch({
@@ -17,13 +19,15 @@ export const userSignupRequest = userData => {
                 dispatch({ type: types.SIGNUP_ERROR, payload: error });
                 alert(error.response.data.message);
             });
+        }
     };
 };
 
 export const userLoginRequest = credentials => {
     return dispatch => {
-        dispatch({ type: types.LOGIN_REQUEST });
-        return axios
+        if (Validation.isLoginValid(credentials)) {
+            dispatch({ type: types.LOGIN_REQUEST });
+            return axios
             .post(`${AUTH_URL}/login`, credentials)
             .then(response => {
                 dispatch({ type: types.LOGIN_SUCCESS, payload: response.data });
@@ -32,6 +36,7 @@ export const userLoginRequest = credentials => {
                 dispatch({ type: types.LOGIN_ERROR, payload: error });
                 alert(error.response.data.message);
             });
+        }
     };
 };
 
